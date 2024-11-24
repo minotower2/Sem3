@@ -307,26 +307,35 @@ void tree::solve7(int h, const student & jerry) {
 }
 
 void tree::magic7(char *s, int k, int h) {
-  int i, width, res, j, widthprev;
+  int i, width, res, j, widthprev, l, t, flag = 0, ent;
   tree_node *prev;
   for (i = 0; i < h; i++) {
-    res = 1;
     width = 0;
-    nodes_on_level_mod(root, 0, i, &width, s, &res);
-    if (width > k && res == 1) {
-      if (i == 0) {
-        delete_subtree(root);
-        root = nullptr;
-        return;
+    nodes_on_level(root, 0, i, &width);
+    if (width >= k) {
+      flag = 0;
+      for (l = 0; l < width-k+1; l++) {
+        res = 1;
+        t = 0;
+        ent = 0;
+        check_level(root, 0, i, &res, &t, l, l+k-1, s, &ent);
+        if (res == 1 && ent == 1) flag = 1;
       }
-      else {
-        widthprev = 0;
-        nodes_on_level(root, 0, i-1, &widthprev);
-        for (j = 0; j < widthprev; j++) {
-          res = 0;
-          prev = get_to_ith(root, 0, i-1, j, &res);
-          if (prev->right) {delete_subtree(prev->right); prev->right = nullptr;}
-          if (prev->left) {delete_subtree(prev->left); prev->left = nullptr;}
+      if (flag == 1) {
+        if (i == 0) {
+          delete_subtree(root);
+          root = nullptr;
+          return;
+        }
+        else {
+          widthprev = 0;
+          nodes_on_level(root, 0, i-1, &widthprev);
+          for (j = 0; j < widthprev; j++) {
+            res = 0;
+            prev = get_to_ith(root, 0, i-1, j, &res);
+            if (prev->right) {delete_subtree(prev->right); prev->right = nullptr;}
+            if (prev->left) {delete_subtree(prev->left); prev->left = nullptr;}
+          }
         }
       }
     }
@@ -341,4 +350,19 @@ void tree::nodes_on_level_mod(tree_node * curr, int level, int goal, int *i, cha
   if (strstr(name, s) == nullptr) *res = -1;
   if (curr->left) nodes_on_level(curr->left, level+1, goal, i);
   if (curr->right) nodes_on_level(curr->right, level+1, goal, i);
+}
+
+void tree::check_level(tree_node *curr, int level, int goal, int *res, int *i, int start, int end, char *s, int *ent) {
+  if (!curr) return;
+  if (level == goal) {
+    if (start <= *i && *i <= end) {
+      *ent = 1;
+      char *name = ((student*) curr)->get_name();
+      if (strstr(name, s) == nullptr) *res = -1;
+    }
+    (*i)++;
+  }
+  if (level > goal) return;
+  if (curr->left) check_level(curr->left, level+1, goal, res, i, start, end, s, ent);
+  if (curr->right) check_level(curr->right, level+1, goal, res, i, start, end, s, ent);
 }
