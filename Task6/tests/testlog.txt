@@ -1,0 +1,4 @@
+----- Task № 1 -----
+Test № 0     test.txt        Len: 0     Memory: Good! Incorrect file! 
+Test № 1     test1.txt       Len: 1     Memory: Good! Incorrect file! 
+Test № 2     test11.txt      Len: 2     Memory: Good! Incorrect file! 
