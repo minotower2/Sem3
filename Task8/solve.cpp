@@ -317,7 +317,7 @@ void tree::magic7(char *s, int k, int h) {
         res = 1;
         t = 0;
         check_level(root, 0, i, &res, &t, l, l+k-1, s);
-        if (res == 1) flag = 1;
+        if (res == 1) {flag = 1; break;}
       }
       if (flag == 1) {
         if (i == 0) {
