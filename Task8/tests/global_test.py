@@ -237,15 +237,15 @@ def check_single_test(task_number, file_name, valgrind_status, precision, log_fi
 # ----------Для пользователя-----------
 # -------------------------------------
 
-min_length = 1
-step = 1
-max_length = 40
-attempts_number = 4
+min_length = 50000
+step = 50000
+max_length = 100000
+attempts_number = 1
 
 use_valgrind = False
 precision = max_length
-first_task = 1
-last_task = 6
+first_task = 7
+last_task = 7
 
 remake = False
 
@@ -253,11 +253,11 @@ if remake:
     print(subprocess.check_output(["make", "clean"]).decode("utf-8"))
     print(subprocess.check_output(["make"]).decode("utf-8"))
 
-generate_tests = False
+generate_tests = True
 have_to_run = True
 
-single_test = True
-print_tree = True
+single_test = False
+print_tree = False
 task = 4
 file_name = "gentest4_146.txt"
 

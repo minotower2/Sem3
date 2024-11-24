@@ -307,8 +307,7 @@ void tree::solve7(int h, const student & jerry) {
 }
 
 void tree::magic7(char *s, int k, int h) {
-  int i, width, res, j, widthprev, l, t, flag = 0, ent;
-  tree_node *prev;
+  int i, width, res, l, t, flag = 0;
   for (i = 0; i < h; i++) {
     width = 0;
     nodes_on_level(root, 0, i, &width);
@@ -317,9 +316,8 @@ void tree::magic7(char *s, int k, int h) {
       for (l = 0; l < width-k+1; l++) {
         res = 1;
         t = 0;
-        ent = 0;
-        check_level(root, 0, i, &res, &t, l, l+k-1, s, &ent);
-        if (res == 1 && ent == 1) flag = 1;
+        check_level(root, 0, i, &res, &t, l, l+k-1, s);
+        if (res == 1) flag = 1;
       }
       if (flag == 1) {
         if (i == 0) {
@@ -328,14 +326,8 @@ void tree::magic7(char *s, int k, int h) {
           return;
         }
         else {
-          widthprev = 0;
-          nodes_on_level(root, 0, i-1, &widthprev);
-          for (j = 0; j < widthprev; j++) {
-            res = 0;
-            prev = get_to_ith(root, 0, i-1, j, &res);
-            if (prev->right) {delete_subtree(prev->right); prev->right = nullptr;}
-            if (prev->left) {delete_subtree(prev->left); prev->left = nullptr;}
-          }
+          delete_level(root, 0, i-1);
+          return;
         }
       }
     }
@@ -352,17 +344,27 @@ void tree::nodes_on_level_mod(tree_node * curr, int level, int goal, int *i, cha
   if (curr->right) nodes_on_level(curr->right, level+1, goal, i);
 }
 
-void tree::check_level(tree_node *curr, int level, int goal, int *res, int *i, int start, int end, char *s, int *ent) {
+void tree::check_level(tree_node *curr, int level, int goal, int *res, int *i, int start, int end, char *s) {
   if (!curr) return;
   if (level == goal) {
     if (start <= *i && *i <= end) {
-      *ent = 1;
       char *name = ((student*) curr)->get_name();
       if (strstr(name, s) == nullptr) *res = -1;
     }
     (*i)++;
   }
   if (level > goal) return;
-  if (curr->left) check_level(curr->left, level+1, goal, res, i, start, end, s, ent);
-  if (curr->right) check_level(curr->right, level+1, goal, res, i, start, end, s, ent);
+  if (curr->left) check_level(curr->left, level+1, goal, res, i, start, end, s);
+  if (curr->right) check_level(curr->right, level+1, goal, res, i, start, end, s);
+}
+
+void tree::delete_level(tree_node * curr, int level, int goal) {
+  if (!curr) return;
+  if (level == goal) {
+    if (curr->right) {delete_subtree(curr->right); curr->right = nullptr;}
+    if (curr->left) {delete_subtree(curr->left); curr->left = nullptr;}
+  }
+  if (level > goal) return;
+  if (curr->left) delete_level(curr->left, level+1, goal);
+  if (curr->right) delete_level(curr->right, level+1, goal);
 }

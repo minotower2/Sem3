@@ -107,6 +107,7 @@ private:
   int cmp_val(tree_node *first, tree_node *second);
   void magic7(char * s, int k, int h);
   void nodes_on_level_mod(tree_node* curr, int level, int goal, int *i, char *s, int *res);
-  void check_level(tree_node *curr, int level, int goal, int *res, int *i, int start, int end, char* s, int *ent);
+  void check_level(tree_node *curr, int level, int goal, int *res, int *i, int start, int end, char* s);
+  void delete_level(tree_node* curr, int level, int goal);
 };
 #endif
