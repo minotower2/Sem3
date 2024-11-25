@@ -101,7 +101,11 @@ public:
   int solve5(int k);
   int solve6(int k);
 private:
+  //task 1
   int check_node1(tree_node *curr, int k);
   int sum_over_subtree1(tree_node *curr, int k);
+  //task 2
+  int count_subtree(tree_node *curr);
+  void magic2(tree_node *curr, int *count, int k);
 };
 #endif

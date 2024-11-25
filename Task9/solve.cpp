@@ -28,3 +28,37 @@ int tree::sum_over_subtree1(tree_node *curr, int k) {
   if (tail) s_level = sum_over_subtree1(tail, k);
   return s_level + s_down + s;
 }
+
+//====================
+//      Task = 2
+//====================
+
+
+int tree::solve2(int k) {
+  int count = 0;
+  magic2(root, &count, k);
+  return count;
+}
+
+int tree::count_subtree(tree_node *curr) {
+  if (!curr) return 0;
+  if (!curr->down) return 1;
+  int d_count = 0, l_count = 0;
+  if (curr->down) {
+    tree_node *p = curr->down;
+    d_count = count_subtree(p);
+    for (p = p->level; p && p->level; p = p->level) l_count++;
+    l_count += count_subtree(p);
+  }
+  return d_count + l_count + 1;
+}
+
+void tree::magic2(tree_node *curr, int *count, int k) {
+  if (!curr) return;
+  int num = count_subtree(curr);
+  if (num <= k) {
+    *count += num;
+  }
+  if (curr->down) magic2(curr->down, count, k);
+  if (curr->level) magic2(curr->level, count, k);
+}
