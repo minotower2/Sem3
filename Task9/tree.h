@@ -95,5 +95,13 @@ private:
   }
 public:
   int solve1(int k);
+  int solve2(int k);
+  int solve3(int k);
+  int solve4(int k);
+  int solve5(int k);
+  int solve6(int k);
+private:
+  int check_node1(tree_node *curr, int k);
+  int sum_over_subtree1(tree_node *curr, int k);
 };
 #endif
