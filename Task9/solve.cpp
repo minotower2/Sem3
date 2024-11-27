@@ -33,7 +33,6 @@ int tree::sum_over_subtree1(tree_node *curr, int k) {
 //      Task = 2
 //====================
 
-
 int tree::solve2(int k) {
   int count = 0;
   magic2(root, &count, k);
@@ -137,4 +136,24 @@ void tree::nodes_on_level(tree_node *curr, int level, int goal, int *count) {
   if (!curr || level > goal) return;
   if (curr->down) nodes_on_level(curr->down, level+1, goal, count);
   if (curr->level) nodes_on_level(curr->level, level, goal, count);
+}
+
+//====================
+//      Task = 6
+//====================
+
+int tree::solve6(int k) {
+  int count = 0;
+  magic6(root, &count, k);
+  return count;
+}
+
+void tree::magic6(tree_node *curr, int *count, int k) {
+  if (!curr) return;
+  int num = count_subtree(curr);
+  if (num >= k) {
+    *count += num;
+  }
+  if (curr->down) magic6(curr->down, count, k);
+  if (curr->level) magic6(curr->level, count, k);
 }
