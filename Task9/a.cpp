@@ -64,6 +64,12 @@ int main(int argc, char** argv) {
   t = (clock()-t)/CLOCKS_PER_SEC;
   printf ("%s : Task = %d k = %d Result = %d Elapsed = %.2f\n", argv[0], task, k, res, t);
 
+  task = 4;
+  t = clock();
+  res = birch.solve4(k);
+  t = (clock()-t)/CLOCKS_PER_SEC;
+  printf ("%s : Task = %d k = %d Result = %d Elapsed = %.2f\n", argv[0], task, k, res, t);
+
   fclose(fp);
   return 0;
 }

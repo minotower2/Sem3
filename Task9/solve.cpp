@@ -92,3 +92,33 @@ int tree::count_levels(tree_node *curr, int level) {
     return l > d ? l : d;
   }
 }
+
+//====================
+//      Task = 4
+//====================
+
+int tree::solve4(int k) {
+  int count = 0;
+  magic4(root, &count, k);
+  return count;
+}
+
+void tree::magic4(tree_node *curr, int *count, int k) {
+  if (!curr) return;
+  int res = 1;
+  count_on_levels(curr, k, &res);
+  if (res == 1) {
+    *count += count_subtree(curr);
+  }
+  if (curr->down) magic4(curr->down, count, k);
+  if (curr->level) magic4(curr->level, count, k);
+}
+
+void tree::count_on_levels(tree_node *curr, int k, int *res) {
+  if (!curr) return;
+  tree_node *p;
+  int c = 0;
+  for (p = curr->down; p; p = p->level) {c++; count_on_levels(p, k, res);}
+  if (c > k) *res = -1;
+}
+
