@@ -113,5 +113,7 @@ private:
   //task 4
   void magic4(tree_node *curr, int *count, int k);
   void count_on_levels(tree_node *curr, int k, int *res);
+  //task 5 
+  void nodes_on_level(tree_node *curr, int level, int goal, int *count);
 };
 #endif

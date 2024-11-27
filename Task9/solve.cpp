@@ -122,3 +122,19 @@ void tree::count_on_levels(tree_node *curr, int k, int *res) {
   if (c > k) *res = -1;
 }
 
+//====================
+//      Task = 5
+//====================
+
+int tree::solve5(int k) {
+  int count = 0;
+  nodes_on_level(root, 0, k, &count);
+  return count;
+}
+
+void tree::nodes_on_level(tree_node *curr, int level, int goal, int *count) {
+  if (level == goal) (*count)++;
+  if (!curr || level > goal) return;
+  if (curr->down) nodes_on_level(curr->down, level+1, goal, count);
+  if (curr->level) nodes_on_level(curr->level, level, goal, count);
+}
