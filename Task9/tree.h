@@ -107,5 +107,8 @@ private:
   //task 2
   int count_subtree(tree_node *curr);
   void magic2(tree_node *curr, int *count, int k);
+  //task 3
+  int count_levels(tree_node *curr, int level);
+  void magic3(tree_node *curr, int *count, int k);
 };
 #endif

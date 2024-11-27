@@ -62,3 +62,33 @@ void tree::magic2(tree_node *curr, int *count, int k) {
   if (curr->down) magic2(curr->down, count, k);
   if (curr->level) magic2(curr->level, count, k);
 }
+
+//====================
+//      Task = 3
+//====================
+
+int tree::solve3(int k) {
+  int count = 0;
+  magic3(root, &count, k);
+  return count;
+}
+
+void tree::magic3(tree_node *curr, int *count, int k) {
+  if (!curr) return;
+  int num = count_levels(curr, 1);
+  if (num <= k) {
+    *count += count_subtree(curr);
+  }
+  if (curr->down) magic3(curr->down, count, k);
+  if (curr->level) magic3(curr->level, count, k);
+}
+
+int tree::count_levels(tree_node *curr, int level) {
+  int l = 0, d = 0;
+  if (!curr->down && !curr->level) return level;
+  else {
+    if (curr->level) l = count_levels(curr->level, level);
+    if (curr->down) d = count_levels(curr->down, level+1);
+    return l > d ? l : d;
+  }
+}
