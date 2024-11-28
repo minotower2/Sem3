@@ -269,22 +269,18 @@ void tree::nodes_on_level(tree_node * curr, int level, int goal, int *i) {
 }
 
 void tree::solve2(int h) {
-  int i, width = 0, j, k, c;
-  tree_node *min, *cur, *tek;
+  int i, width = 0, j, c;
+  tree_node *min, *tek;
   for (i = 0; i < h; i++) {
     width = 0;
     nodes_on_level(root, 0, i, &width);
     if (width > 1) {
       for (c = 0; c < width; c++) {
         j = 0;
-        min = get_to_ith(root, 0, i, c, &j);
-        j = 0;
         tek = get_to_ith(root, 0, i, c, &j);
-        for (k = c+1; k < width; k++) {
-          j = 0;
-          cur = get_to_ith(root, 0, i, k, &j);
-          if (cur && min && cmp_val(cur, min) == 1) min = cur;
-        }
+        min = tek;
+        j = 0;
+        find_min(root, 0, i, &j, c+1, width, &min);
         if (tek && min) {
           swap_tree_nodes(tek, min);
         }
@@ -298,6 +294,19 @@ int tree::cmp_val(tree_node *first, tree_node *second) {
   int val2 = ((student *) second)->get_value();
   if (val1 < val2) return 1;
   else return 0;
+}
+
+void tree::find_min(tree_node *curr, int level, int goal, int *i, int left, int right, tree_node **min) {
+  if (!curr || level > goal) return;
+  if (level == goal) {
+    if (left <= *i && *i <= right) {
+      if (curr && *min && cmp_val(curr, *min) == 1) *min = curr;
+    }
+    (*i)++;
+  }
+  if (curr->left) find_min(curr->left, level+1, goal, i, left, right, min);
+  if (curr->right) find_min(curr->right, level+1, goal, i, left, right, min);
+
 }
 
 void tree::solve7(int h, const student & jerry) {

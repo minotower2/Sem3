@@ -238,14 +238,14 @@ def check_single_test(task_number, file_name, valgrind_status, precision, log_fi
 # -------------------------------------
 
 min_length = 50000
-step = 1
-max_length = 50000
+step = 49999
+max_length = 100000
 attempts_number = 1
 
 use_valgrind = False
 precision = max_length
-first_task = 7
-last_task = 7
+first_task = 2
+last_task = 2
 
 remake = False
 

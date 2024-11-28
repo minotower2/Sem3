@@ -109,5 +109,6 @@ private:
   void nodes_on_level_mod(tree_node* curr, int level, int goal, int *i, char *s, int *res);
   void check_level(tree_node *curr, int level, int goal, int *res, int *i, int start, int end, char* s);
   void delete_level(tree_node* curr, int level, int goal);
+  void find_min(tree_node *curr, int level, int goal, int *i, int left, int right, tree_node **min);
 };
 #endif
