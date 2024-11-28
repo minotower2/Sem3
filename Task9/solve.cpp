@@ -150,10 +150,22 @@ int tree::solve6(int k) {
 
 void tree::magic6(tree_node *curr, int *count, int k) {
   if (!curr) return;
-  int num = count_subtree(curr);
+  int num = count_levels(curr, 1);
   if (num >= k) {
-    *count += num;
+    for (int j = k; j <= num; j++) {
+      int c = 0;
+      ends_on_level(curr, 1, j, &c);
+      *count += c*j;
+    }
   }
   if (curr->down) magic6(curr->down, count, k);
   if (curr->level) magic6(curr->level, count, k);
+}
+
+
+void tree::ends_on_level(tree_node *curr, int level, int goal, int *count) {
+  if (level == goal && !curr->down) (*count)++;
+  if (!curr || level > goal) return;
+  if (curr->down) ends_on_level(curr->down, level+1, goal, count);
+  if (curr->level) ends_on_level(curr->level, level, goal, count);
 }
