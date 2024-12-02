@@ -5,12 +5,14 @@
 //====================
 
 int tree::solve1(int k) {
-  k--;
-  return sum_over_subtree1(root, k);
+  int sum = 0;
+  sum_over_subtree1(root, k, &sum);
+  return sum;
 }
 
 int tree::check_node1(tree_node *curr, int k) {
   int i;
+  k--;
   tree_node *p = curr;
   if (!curr) return 0;
   for (p = curr->down, i = 0; p && i < k; p = p->level, i++);
@@ -18,15 +20,11 @@ int tree::check_node1(tree_node *curr, int k) {
   else return 0;
 }
 
-int tree::sum_over_subtree1(tree_node *curr, int k) {
-  tree_node *tail;
-  if (!curr) return 0;
-  int s_level = 0, s_down = 0, s;
-  s = check_node1(curr, k);
-  if (curr->down) s_down = sum_over_subtree1(curr->down, k);
-  for (tail = curr->level; tail && tail->level; tail = tail->level);
-  if (tail) s_level = sum_over_subtree1(tail, k);
-  return s_level + s_down + s;
+void tree::sum_over_subtree1(tree_node *curr, int k, int *sum) {
+  if (!curr) return;
+  if (check_node1(curr, k) == 1) *sum += 1;
+  if (curr->down) sum_over_subtree1(curr->down, k, sum);
+  if (curr->level) sum_over_subtree1(curr->level, k, sum);
 }
 
 //====================
