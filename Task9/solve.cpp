@@ -127,7 +127,6 @@ void tree::magic4(tree_node *curr, int *count, int k) {
   count_on_levels(curr, k, &res);
   if (res == 1) {
     *count += count_subtree(curr);
-    curr->print();
   }
   if (res != 1) {
     if (curr->down) magic4(curr->down, count, k);
@@ -137,10 +136,14 @@ void tree::magic4(tree_node *curr, int *count, int k) {
 
 void tree::count_on_levels(tree_node *curr, int k, int *res) {
   if (!curr) return;
-  tree_node *p;
-  int c = 0;
-  for (p = curr->down; p; p = p->level) {c++; count_on_levels(p, k, res);}
-  if (c > k) *res = -1;
+  int count = 1;
+  int l = 0;
+  while (count > 0) {
+    count = 0;
+    if (curr->down) nodes_on_level(curr->down, 0, l, &count);
+    l++;
+    if (count > k) {*res = -1; break;}
+  }
 }
 
 //====================
