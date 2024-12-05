@@ -6,7 +6,8 @@
 
 int tree::solve1(int k) {
   int sum = 0;
-  sum_over_subtree1(root, k, &sum);
+  if (k > 0) sum_over_subtree1(root, k, &sum);
+  else count_ends(root, &sum);
   return sum;
 }
 
@@ -27,6 +28,12 @@ void tree::sum_over_subtree1(tree_node *curr, int k, int *sum) {
   if (curr->level) sum_over_subtree1(curr->level, k, sum);
 }
 
+void tree::count_ends(tree_node *curr, int *sum) {
+  if (!curr) return;
+  if (!curr->down) (*sum)++;
+  if (curr->down) count_ends(curr->down, sum);
+  if (curr->level) count_ends(curr->level, sum);
+}
 //====================
 //      Task = 2
 //====================
@@ -60,8 +67,8 @@ void tree::magic2(tree_node *curr, int *count, int k) {
   }
   if (flag == 1) {
     if (curr->down) magic2(curr->down, count, k);
-    if (curr->level) magic2(curr->level, count, k);
   }
+  if (curr->level) magic2(curr->level, count, k);
 }
 
 //====================
@@ -77,23 +84,29 @@ int tree::solve3(int k) {
 void tree::magic3(tree_node *curr, int *count, int k) {
   if (!curr) return;
   int flag = 1;
-  int num = count_levels(curr, 1);
+  int num = count_levels(curr);
   if (num <= k) {
     *count += count_subtree(curr);
     flag = 0;
   }
   if (flag == 1) {
     if (curr->down) magic3(curr->down, count, k);
-    if (curr->level) magic3(curr->level, count, k);
   }
+  if (curr->level) magic3(curr->level, count, k);
 }
 
-int tree::count_levels(tree_node *curr, int level) {
+int tree::count_levels(tree_node *curr) {
+  if (!curr) return 0;
+  if (!curr->down) return 1;
+  return 1 + count_levels_recc(curr->down, 1);
+}
+
+int tree::count_levels_recc(tree_node *curr, int level) {
   int l = 0, d = 0;
   if (!curr->down && !curr->level) return level;
   else {
-    if (curr->level) l = count_levels(curr->level, level);
-    if (curr->down) d = count_levels(curr->down, level+1);
+    if (curr->level) l = count_levels_recc(curr->level, level);
+    if (curr->down) d = count_levels_recc(curr->down, level+1);
     return l > d ? l : d;
   }
 }
@@ -104,7 +117,7 @@ int tree::count_levels(tree_node *curr, int level) {
 
 int tree::solve4(int k) {
   int count = 0;
-  magic4(root, &count, k);
+  if (k > 0) magic4(root, &count, k);
   return count;
 }
 
@@ -114,11 +127,12 @@ void tree::magic4(tree_node *curr, int *count, int k) {
   count_on_levels(curr, k, &res);
   if (res == 1) {
     *count += count_subtree(curr);
+    curr->print();
   }
   if (res != 1) {
     if (curr->down) magic4(curr->down, count, k);
-    if (curr->level) magic4(curr->level, count, k);
   }
+  if (curr->level) magic4(curr->level, count, k);
 }
 
 void tree::count_on_levels(tree_node *curr, int k, int *res) {
@@ -135,7 +149,7 @@ void tree::count_on_levels(tree_node *curr, int k, int *res) {
 
 int tree::solve5(int k) {
   int count = 0;
-  nodes_on_level(root, 0, k, &count);
+  if (root) nodes_on_level(root, 0, k, &count);
   return count;
 }
 
@@ -158,7 +172,7 @@ int tree::solve6(int k) {
 
 void tree::magic6(tree_node *curr, int *count, int k) {
   if (!curr) return;
-  int num = count_levels(curr, 1);
+  int num = count_levels(curr);
   if (num >= k) {
     for (int j = k; j <= num; j++) {
       int c = 0;

@@ -104,12 +104,14 @@ private:
   //task 1
   int check_node1(tree_node *curr, int k);
   void sum_over_subtree1(tree_node *curr, int k, int * sum);
+  void count_ends(tree_node *curr, int *count);
   //task 2
   int count_subtree(tree_node *curr);
   void magic2(tree_node *curr, int *count, int k);
   //task 3
-  int count_levels(tree_node *curr, int level);
+  int count_levels(tree_node *curr);
   void magic3(tree_node *curr, int *count, int k);
+  int count_levels_recc(tree_node *curr, int level);
   //task 4
   void magic4(tree_node *curr, int *count, int k);
   void count_on_levels(tree_node *curr, int k, int *res);
