@@ -1,0 +1,63 @@
+
+ --- Task № 0 ---
+Standard set tests:
+Test № 0     test.txt           Len: 0     k: 1      Memory: Good! Student: OK List2: OK
+Test № 1     test1.txt          Len: 1     k: 1      Memory: Good! Student: OK List2: OK
+Test № 2     test2.txt          Len: 7     k: 2      Memory: Leaks or SF! ==61277== Memcheck, a memory error detector
+==61277== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==61277== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
+==61277== Command: ./a.out 1 test2.txt 2
+==61277== 
+==61277== 
+==61277== HEAP SUMMARY:
+==61277==     in use at exit: 472 bytes in 1 blocks
+==61277==   total heap usage: 13 allocs, 12 frees, 82,544 bytes allocated
+==61277== 
+==61277== LEAK SUMMARY:
+==61277==    definitely lost: 0 bytes in 0 blocks
+==61277==    indirectly lost: 0 bytes in 0 blocks
+==61277==      possibly lost: 0 bytes in 0 blocks
+==61277==    still reachable: 472 bytes in 1 blocks
+==61277==         suppressed: 0 bytes in 0 blocks
+==61277== Rerun with --leak-check=full to see details of leaked memory
+==61277== 
+==61277== For lists of detected and suppressed errors, rerun with: -s
+==61277== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+Student: OK List2: OK
+Comment: Incorrect file!
+
+Test № 3     a01.txt            Len: 0     k: 4      Memory: Good! Student: OK List2: OK
+Test № 4     a02.txt            Len: 1     k: 4      Memory: Good! Student: OK List2: OK
+Test № 4     a02.txt            Len: 1     k: 1      Memory: Good! Student: OK List2: OK
+Test № 5     a03.txt            Len: 14    k: 4      Memory: Good! Student: OK List2: OK
+Test № 5     a03.txt            Len: 14    k: 2      Memory: Good! Student: OK List2: OK
+Test № 5     a03.txt            Len: 14    k: 1      Memory: Good! Student: OK List2: OK
+Test № 5     a03.txt            Len: 14    k: 5      Memory: Good! Student: OK List2: OK
+Test № 5     a03.txt            Len: 14    k: 6      Memory: Good! Student: OK List2: OK
+Test № 6     a04.txt            Len: 18    k: 2      Memory: Good! Student: OK List2: OK
+Test № 6     a04.txt            Len: 18    k: 3      Memory: Good! Student: OK List2: OK
+Test № 6     a04.txt            Len: 18    k: 4      Memory: Good! Student: OK List2: OK
+Test № 6     a04.txt            Len: 18    k: 8      Memory: Good! Student: OK List2: OK
+Test № 7     a05.txt            Len: 8     k: 2      Memory: Good! Student: OK List2: OK
+Test № 7     a05.txt            Len: 8     k: 3      Memory: Good! Student: OK List2: OK
+Test № 7     a05.txt            Len: 8     k: 7      Memory: Good! Student: OK List2: OK
+Test № 7     a05.txt            Len: 8     k: 8      Memory: Good! Student: OK List2: OK
+Test № 8     a06.txt            Len: 11    k: 2      Memory: Good! Student: OK List2: OK
+Test № 8     a06.txt            Len: 11    k: 3      Memory: Good! Student: OK List2: OK
+Test № 8     a06.txt            Len: 11    k: 4      Memory: Good! Student: OK List2: OK
+Test № 8     a06.txt            Len: 11    k: 7      Memory: Good! Student: OK List2: OK
+Test № 8     a06.txt            Len: 11    k: 9      Memory: Good! Student: OK List2: OK
+Test № 9     a07.txt            Len: 25    k: 3      Memory: Good! Student: OK List2: OK
+Test № 9     a07.txt            Len: 25    k: 5      Memory: Good! Student: OK List2: OK
+Test № 9     a07.txt            Len: 25    k: 6      Memory: Good! Student: OK List2: OK
+Test № 10    a08.txt            Len: 35    k: 6      Memory: Good! Student: OK List2: OK
+Test № 10    a08.txt            Len: 35    k: 20     Memory: Good! Student: OK List2: OK
+Test № 10    a08.txt            Len: 35    k: 30     Memory: Good! Student: OK List2: OK
+Test № 10    a08.txt            Len: 35    k: 4      Memory: Good! Student: OK List2: OK
+Test № 11    a09.txt            Len: 40    k: 4      Memory: Good! Student: OK List2: OK
+Test № 11    a09.txt            Len: 40    k: 9      Memory: Good! Student: OK List2: OK
+Test № 11    a09.txt            Len: 40    k: 18     Memory: Good! Student: OK List2: OK
+Test № 11    a09.txt            Len: 40    k: 13     Memory: Good! Student: OK List2: OK
+Test № 12    w.txt              Len: 28    k: 4      Memory: Good! Student: OK List2: OK
+Test № 12    w.txt              Len: 28    k: 2      Memory: Good! Student: OK List2: OK
+ Summary:36 of 37 completed successfully!
