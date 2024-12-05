@@ -1,0 +1,318 @@
+
+ --- Task № 1 ---
+Standard set tests:
+Test № 0     test.txt           Len: 0     k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 0, 1, 0]
+Auto: [0, 0, 0, 0, 0, 0]
+Test № 1     test1.txt          Len: 1     k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 1, 1, 1]
+Auto: [1, 0, 0, 0, 1, 1]
+ Summary:0 of 2 completed successfully!
+Test № 0     gentest1_0.txt     Len: 40    k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 14, 1, 477]
+Auto: [14, 0, 0, 0, 1, 40]
+Test № 1     gentest1_1.txt     Len: 40    k: 1      Result: Wrong Answer
+Your: [17, 12, 12, 50, 2, 455]
+Auto: [17, 12, 12, 27, 2, 40]
+Test № 2     gentest1_2.txt     Len: 40    k: 2      Result: Wrong Answer
+Your: [14, 21, 26, 251, 4, 677]
+Auto: [14, 18, 22, 32, 4, 40]
+Test № 3     gentest1_3.txt     Len: 40    k: 3      Result: Wrong Answer
+Your: [0, 42, 52, 235, 4, 573]
+Auto: [0, 26, 29, 37, 4, 40]
+Test № 4     gentest1_4.txt     Len: 40    k: 4      Result: Wrong Answer
+Your: [0, 45, 53, 225, 6, 409]
+Auto: [0, 27, 30, 39, 6, 40]
+Test № 5     gentest1_5.txt     Len: 40    k: 7      Result: Wrong Answer
+Your: [0, 80, 155, 227, 6, 145]
+Auto: [0, 32, 38, 40, 6, 29]
+Test № 6     gentest1_6.txt     Len: 40    k: 10     Result: Wrong Answer
+Your: [0, 116, 203, 243, 1, 31]
+Auto: [0, 36, 39, 40, 1, 17]
+Test № 7     gentest1_7.txt     Len: 140   k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 43, 1, 2560]
+Auto: [43, 0, 0, 0, 1, 140]
+Test № 8     gentest1_8.txt     Len: 140   k: 1      Result: Wrong Answer
+Your: [41, 50, 43, 118, 2, 3719]
+Auto: [41, 50, 50, 81, 2, 140]
+Test № 9     gentest1_9.txt     Len: 140   k: 2      Result: Wrong Answer
+Your: [41, 90, 93, 1077, 4, 2785]
+Auto: [41, 66, 71, 114, 4, 140]
+Test № 10    gentest1_10.txt    Len: 140   k: 3      Result: Wrong Answer
+Your: [0, 143, 179, 1135, 8, 2945]
+Auto: [0, 87, 99, 123, 8, 140]
+Test № 11    gentest1_11.txt    Len: 140   k: 4      Result: Wrong Answer
+Your: [0, 169, 223, 1111, 12, 2441]
+Auto: [0, 91, 103, 125, 12, 140]
+Test № 12    gentest1_12.txt    Len: 140   k: 7      Result: Wrong Answer
+Your: [0, 272, 428, 1051, 18, 1416]
+Auto: [0, 112, 127, 136, 18, 132]
+Test № 13    gentest1_13.txt    Len: 140   k: 10     Result: Wrong Answer
+Your: [0, 364, 709, 1064, 6, 392]
+Auto: [0, 120, 137, 136, 6, 82]
+Summary: 0 of 14 completed successfully!
+
+ --- Task № 2 ---
+Standard set tests:
+Test № 0     test.txt           Len: 0     k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 0, 1, 0]
+Auto: [0, 0, 0, 0, 0, 0]
+Test № 1     test1.txt          Len: 1     k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 1, 1, 1]
+Auto: [1, 0, 0, 0, 1, 1]
+ Summary:0 of 2 completed successfully!
+Test № 0     gentest2_0.txt     Len: 40    k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 12, 1, 496]
+Auto: [12, 0, 0, 0, 1, 40]
+Test № 1     gentest2_1.txt     Len: 40    k: 1      Result: Wrong Answer
+Your: [9, 16, 10, 31, 2, 718]
+Auto: [9, 16, 16, 22, 2, 40]
+Test № 2     gentest2_2.txt     Len: 40    k: 2      Result: Wrong Answer
+Your: [12, 25, 22, 209, 4, 392]
+Auto: [12, 19, 20, 32, 4, 40]
+Test № 3     gentest2_3.txt     Len: 40    k: 3      Result: Wrong Answer
+Your: [0, 37, 46, 319, 2, 842]
+Auto: [0, 24, 27, 34, 2, 40]
+Test № 4     gentest2_4.txt     Len: 40    k: 4      Result: Wrong Answer
+Your: [0, 49, 78, 218, 7, 396]
+Auto: [0, 27, 32, 37, 7, 40]
+Test № 5     gentest2_5.txt     Len: 40    k: 7      Result: Wrong Answer
+Your: [0, 83, 154, 233, 5, 243]
+Auto: [0, 32, 38, 39, 5, 36]
+Test № 6     gentest2_6.txt     Len: 40    k: 10     Result: Wrong Answer
+Your: [0, 86, 233, 233, 0, 30]
+Auto: [0, 33, 40, 40, 0, 14]
+Test № 7     gentest2_7.txt     Len: 140   k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 44, 1, 2902]
+Auto: [44, 0, 0, 0, 1, 140]
+Test № 8     gentest2_8.txt     Len: 140   k: 1      Result: Wrong Answer
+Your: [49, 46, 38, 131, 2, 2924]
+Auto: [49, 46, 46, 79, 2, 140]
+Test № 9     gentest2_9.txt     Len: 140   k: 2      Result: Wrong Answer
+Your: [45, 92, 88, 1027, 4, 2628]
+Auto: [45, 69, 72, 115, 4, 140]
+Test № 10    gentest2_10.txt    Len: 140   k: 3      Result: Wrong Answer
+Your: [0, 137, 165, 1204, 8, 3380]
+Auto: [0, 82, 91, 121, 8, 140]
+Test № 11    gentest2_11.txt    Len: 140   k: 4      Result: Wrong Answer
+Your: [0, 185, 249, 1129, 7, 3070]
+Auto: [0, 97, 112, 125, 7, 140]
+Test № 12    gentest2_12.txt    Len: 140   k: 7      Result: Wrong Answer
+Your: [0, 254, 443, 1208, 21, 2223]
+Auto: [0, 108, 125, 133, 21, 133]
+Test № 13    gentest2_13.txt    Len: 140   k: 10     Result: Wrong Answer
+Your: [0, 348, 665, 1125, 14, 854]
+Auto: [0, 119, 136, 135, 14, 92]
+Summary: 0 of 14 completed successfully!
+
+ --- Task № 3 ---
+Standard set tests:
+Test № 0     test.txt           Len: 0     k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 0, 1, 0]
+Auto: [0, 0, 0, 0, 0, 0]
+Test № 1     test1.txt          Len: 1     k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 1, 1, 1]
+Auto: [1, 0, 0, 0, 1, 1]
+ Summary:0 of 2 completed successfully!
+Test № 0     gentest3_0.txt     Len: 40    k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 13, 1, 477]
+Auto: [13, 0, 0, 0, 1, 40]
+Test № 1     gentest3_1.txt     Len: 40    k: 1      Result: Wrong Answer
+Your: [17, 12, 9, 53, 2, 387]
+Auto: [17, 12, 12, 27, 2, 40]
+Test № 2     gentest3_2.txt     Len: 40    k: 2      Result: Wrong Answer
+Your: [13, 26, 24, 253, 2, 612]
+Auto: [13, 20, 21, 32, 2, 40]
+Test № 3     gentest3_3.txt     Len: 40    k: 3      Result: Wrong Answer
+Your: [0, 35, 42, 217, 6, 373]
+Auto: [0, 22, 24, 37, 6, 40]
+Test № 4     gentest3_4.txt     Len: 40    k: 4      Result: Wrong Answer
+Your: [0, 53, 56, 256, 4, 485]
+Auto: [0, 26, 27, 39, 4, 39]
+Test № 5     gentest3_5.txt     Len: 40    k: 7      Result: Wrong Answer
+Your: [0, 81, 102, 239, 3, 223]
+Auto: [0, 32, 35, 40, 3, 28]
+Test № 6     gentest3_6.txt     Len: 40    k: 10     Result: Wrong Answer
+Your: [0, 103, 225, 225, 0, 0]
+Auto: [0, 35, 40, 40, 0, 0]
+Test № 7     gentest3_7.txt     Len: 140   k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 47, 1, 2855]
+Auto: [47, 0, 0, 0, 1, 140]
+Test № 8     gentest3_8.txt     Len: 140   k: 1      Result: Wrong Answer
+Your: [41, 50, 40, 144, 2, 4447]
+Auto: [41, 50, 50, 82, 2, 140]
+Test № 9     gentest3_9.txt     Len: 140   k: 2      Result: Wrong Answer
+Your: [47, 94, 97, 1272, 4, 4339]
+Auto: [47, 71, 76, 112, 4, 140]
+Test № 10    gentest3_10.txt    Len: 140   k: 3      Result: Wrong Answer
+Your: [0, 144, 149, 1113, 6, 3252]
+Auto: [0, 90, 98, 119, 6, 140]
+Test № 11    gentest3_11.txt    Len: 140   k: 4      Result: Wrong Answer
+Your: [0, 180, 216, 1105, 11, 2664]
+Auto: [0, 92, 103, 127, 11, 140]
+Test № 12    gentest3_12.txt    Len: 140   k: 7      Result: Wrong Answer
+Your: [0, 229, 497, 1028, 29, 1354]
+Auto: [0, 107, 129, 135, 29, 128]
+Test № 13    gentest3_13.txt    Len: 140   k: 10     Result: Wrong Answer
+Your: [0, 305, 732, 1066, 13, 457]
+Auto: [0, 117, 136, 136, 13, 77]
+Summary: 0 of 14 completed successfully!
+
+ --- Task № 4 ---
+Standard set tests:
+Test № 0     test.txt           Len: 0     k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 0, 1, 0]
+Auto: [0, 0, 0, 0, 0, 0]
+Test № 1     test1.txt          Len: 1     k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 1, 1, 1]
+Auto: [1, 0, 0, 0, 1, 1]
+ Summary:0 of 2 completed successfully!
+Test № 0     gentest4_0.txt     Len: 40    k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 15, 1, 532]
+Auto: [15, 0, 0, 0, 1, 40]
+Test № 1     gentest4_1.txt     Len: 40    k: 1      Result: Wrong Answer
+Your: [17, 12, 10, 54, 2, 421]
+Auto: [17, 12, 12, 27, 2, 40]
+Test № 2     gentest4_2.txt     Len: 40    k: 2      Result: Wrong Answer
+Your: [13, 32, 30, 232, 4, 546]
+Auto: [13, 23, 23, 33, 4, 40]
+Test № 3     gentest4_3.txt     Len: 40    k: 3      Result: Wrong Answer
+Your: [0, 36, 50, 236, 5, 477]
+Auto: [0, 23, 26, 36, 5, 40]
+Test № 4     gentest4_4.txt     Len: 40    k: 4      Result: Wrong Answer
+Your: [0, 48, 68, 207, 8, 319]
+Auto: [0, 28, 32, 36, 8, 40]
+Test № 5     gentest4_5.txt     Len: 40    k: 7      Result: Wrong Answer
+Your: [0, 80, 111, 269, 6, 299]
+Auto: [0, 32, 35, 40, 6, 30]
+Test № 6     gentest4_6.txt     Len: 40    k: 10     Result: Wrong Answer
+Your: [0, 109, 199, 199, 0, 0]
+Auto: [0, 36, 40, 40, 0, 0]
+Test № 7     gentest4_7.txt     Len: 140   k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 47, 1, 3280]
+Auto: [47, 0, 0, 0, 1, 140]
+Test № 8     gentest4_8.txt     Len: 140   k: 1      Result: Wrong Answer
+Your: [35, 53, 46, 112, 2, 3352]
+Auto: [35, 53, 53, 79, 2, 140]
+Test № 9     gentest4_9.txt     Len: 140   k: 2      Result: Wrong Answer
+Your: [45, 98, 99, 1094, 4, 3141]
+Auto: [45, 72, 75, 114, 4, 140]
+Test № 10    gentest4_10.txt    Len: 140   k: 3      Result: Wrong Answer
+Your: [0, 137, 157, 1139, 6, 2794]
+Auto: [0, 85, 94, 118, 6, 140]
+Test № 11    gentest4_11.txt    Len: 140   k: 4      Result: Wrong Answer
+Your: [0, 182, 249, 1061, 10, 2246]
+Auto: [0, 95, 109, 128, 10, 140]
+Test № 12    gentest4_12.txt    Len: 140   k: 7      Result: Wrong Answer
+Your: [0, 272, 400, 1049, 26, 1597]
+Auto: [0, 110, 125, 134, 26, 132]
+Test № 13    gentest4_13.txt    Len: 140   k: 10     Result: Wrong Answer
+Your: [0, 355, 635, 1049, 5, 406]
+Auto: [0, 120, 136, 136, 5, 78]
+Summary: 0 of 14 completed successfully!
+
+ --- Task № 5 ---
+Standard set tests:
+Test № 0     test.txt           Len: 0     k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 0, 1, 0]
+Auto: [0, 0, 0, 0, 0, 0]
+Test № 1     test1.txt          Len: 1     k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 1, 1, 1]
+Auto: [1, 0, 0, 0, 1, 1]
+ Summary:0 of 2 completed successfully!
+Test № 0     gentest5_0.txt     Len: 40    k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 13, 1, 502]
+Auto: [13, 0, 0, 0, 1, 40]
+Test № 1     gentest5_1.txt     Len: 40    k: 1      Result: Wrong Answer
+Your: [15, 13, 12, 42, 2, 430]
+Auto: [15, 13, 13, 25, 2, 40]
+Test № 2     gentest5_2.txt     Len: 40    k: 2      Result: Wrong Answer
+Your: [11, 30, 24, 205, 4, 397]
+Auto: [11, 21, 21, 33, 4, 40]
+Test № 3     gentest5_3.txt     Len: 40    k: 3      Result: Wrong Answer
+Your: [0, 44, 51, 213, 6, 407]
+Auto: [0, 27, 29, 35, 6, 40]
+Test № 4     gentest5_4.txt     Len: 40    k: 4      Result: Wrong Answer
+Your: [0, 49, 75, 225, 6, 490]
+Auto: [0, 28, 33, 34, 6, 40]
+Test № 5     gentest5_5.txt     Len: 40    k: 7      Result: Wrong Answer
+Your: [0, 79, 146, 212, 5, 105]
+Auto: [0, 32, 38, 39, 5, 31]
+Test № 6     gentest5_6.txt     Len: 40    k: 10     Result: Wrong Answer
+Your: [0, 105, 223, 223, 0, 20]
+Auto: [0, 35, 40, 40, 0, 12]
+Test № 7     gentest5_7.txt     Len: 140   k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 47, 1, 3272]
+Auto: [47, 0, 0, 0, 1, 140]
+Test № 8     gentest5_8.txt     Len: 140   k: 1      Result: Wrong Answer
+Your: [55, 43, 37, 143, 2, 2839]
+Auto: [55, 43, 43, 81, 2, 140]
+Test № 9     gentest5_9.txt     Len: 140   k: 2      Result: Wrong Answer
+Your: [44, 103, 96, 1037, 4, 2929]
+Auto: [44, 74, 76, 112, 4, 140]
+Test № 10    gentest5_10.txt    Len: 140   k: 3      Result: Wrong Answer
+Your: [0, 138, 156, 1266, 4, 4314]
+Auto: [0, 85, 93, 116, 4, 140]
+Test № 11    gentest5_11.txt    Len: 140   k: 4      Result: Wrong Answer
+Your: [0, 171, 256, 1070, 14, 2856]
+Auto: [0, 96, 113, 127, 14, 140]
+Test № 12    gentest5_12.txt    Len: 140   k: 7      Result: Wrong Answer
+Your: [0, 269, 437, 1169, 16, 2641]
+Auto: [0, 108, 125, 133, 16, 129]
+Test № 13    gentest5_13.txt    Len: 140   k: 10     Result: Wrong Answer
+Your: [0, 314, 732, 1125, 15, 624]
+Auto: [0, 116, 137, 134, 15, 91]
+Summary: 0 of 14 completed successfully!
+
+ --- Task № 6 ---
+Standard set tests:
+Test № 0     test.txt           Len: 0     k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 0, 1, 0]
+Auto: [0, 0, 0, 0, 0, 0]
+Test № 1     test1.txt          Len: 1     k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 1, 1, 1]
+Auto: [1, 0, 0, 0, 1, 1]
+ Summary:0 of 2 completed successfully!
+Test № 0     gentest6_0.txt     Len: 40    k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 12, 1, 495]
+Auto: [12, 0, 0, 0, 1, 40]
+Test № 1     gentest6_1.txt     Len: 40    k: 1      Result: Wrong Answer
+Your: [15, 13, 10, 41, 2, 692]
+Auto: [15, 13, 13, 24, 2, 40]
+Test № 2     gentest6_2.txt     Len: 40    k: 2      Result: Wrong Answer
+Your: [11, 24, 26, 208, 4, 376]
+Auto: [11, 18, 19, 32, 4, 40]
+Test № 3     gentest6_3.txt     Len: 40    k: 3      Result: Wrong Answer
+Your: [0, 43, 44, 260, 5, 663]
+Auto: [0, 25, 26, 36, 5, 40]
+Test № 4     gentest6_4.txt     Len: 40    k: 4      Result: Wrong Answer
+Your: [0, 47, 73, 215, 10, 384]
+Auto: [0, 27, 31, 36, 10, 40]
+Test № 5     gentest6_5.txt     Len: 40    k: 7      Result: Wrong Answer
+Your: [0, 75, 178, 257, 11, 349]
+Auto: [0, 32, 38, 37, 11, 37]
+Test № 6     gentest6_6.txt     Len: 40    k: 10     Result: Wrong Answer
+Your: [0, 92, 205, 205, 0, 0]
+Auto: [0, 35, 40, 40, 0, 0]
+Test № 7     gentest6_7.txt     Len: 140   k: 0      Result: Wrong Answer
+Your: [0, 0, 0, 46, 1, 4067]
+Auto: [46, 0, 0, 0, 1, 140]
+Test № 8     gentest6_8.txt     Len: 140   k: 1      Result: Wrong Answer
+Your: [51, 45, 42, 139, 2, 3090]
+Auto: [51, 45, 45, 79, 2, 140]
+Test № 9     gentest6_9.txt     Len: 140   k: 2      Result: Wrong Answer
+Your: [45, 90, 87, 1222, 4, 3512]
+Auto: [45, 68, 71, 116, 4, 140]
+Test № 10    gentest6_10.txt    Len: 140   k: 3      Result: Wrong Answer
+Your: [0, 138, 161, 1152, 7, 3713]
+Auto: [0, 88, 99, 117, 7, 140]
+Test № 11    gentest6_11.txt    Len: 140   k: 4      Result: Wrong Answer
+Your: [0, 175, 212, 1137, 9, 2589]
+Auto: [0, 95, 105, 123, 9, 139]
+Test № 12    gentest6_12.txt    Len: 140   k: 7      Result: Wrong Answer
+Your: [0, 256, 432, 1163, 18, 2211]
+Auto: [0, 111, 126, 135, 18, 123]
+Test № 13    gentest6_13.txt    Len: 140   k: 10     Result: Wrong Answer
+Your: [0, 368, 702, 1039, 8, 411]
+Auto: [0, 122, 137, 134, 8, 76]
+Summary: 0 of 14 completed successfully!
