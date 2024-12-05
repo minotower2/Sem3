@@ -38,23 +38,50 @@ int main(int argc, char* argv[]) {
       break;
     case io_status::eof:
       printf("Reached end of file\n");
+      delete birch;
       return -3;
     case io_status::format:
       printf("Wrong format of data\n");
+      delete birch;
       return -4;
     case io_status::memory:
       printf("Not enough memory\n");
+      delete birch;
       return -5;
     case io_status::read:
       printf("Failed to read list\n");
+      delete birch;
       return -6;
   }
-  printf("Tree:\n");
   birch->print(r);
 
   task = 1;
   t = clock();
   res = birch->solve1(birch->get_root());
+  t = (clock()-t)/CLOCKS_PER_SEC;
+  printf ("%s : Task = %d M = %d Result = %d Elapsed = %.2f\n", argv[0], task, k, res, t);
+
+  task = 2;
+  t = clock();
+  res = birch->solve2(birch->get_root());
+  t = (clock()-t)/CLOCKS_PER_SEC;
+  printf ("%s : Task = %d M = %d Result = %d Elapsed = %.2f\n", argv[0], task, k, res, t);
+
+  task = 3;
+  t = clock();
+  res = birch->solve3(birch->get_root());
+  t = (clock()-t)/CLOCKS_PER_SEC;
+  printf ("%s : Task = %d M = %d Result = %d Elapsed = %.2f\n", argv[0], task, k, res, t);
+
+  task = 4;
+  t = clock();
+  res = birch->solve4(birch->get_root());
+  t = (clock()-t)/CLOCKS_PER_SEC;
+  printf ("%s : Task = %d M = %d Result = %d Elapsed = %.2f\n", argv[0], task, k, res, t);
+
+  task = 5;
+  t = clock();
+  res = birch->solve5(birch->get_root());
   t = (clock()-t)/CLOCKS_PER_SEC;
   printf ("%s : Task = %d M = %d Result = %d Elapsed = %.2f\n", argv[0], task, k, res, t);
 
@@ -74,23 +101,50 @@ int main(int argc, char* argv[]) {
       break;
     case io_status::eof:
       printf("Reached end of file\n");
+      delete pine;
       return -3;
     case io_status::format:
       printf("Wrong format of data\n");
+      delete pine;
       return -4;
     case io_status::memory:
       printf("Not enough memory\n");
+      delete pine;
       return -5;
     case io_status::read:
       printf("Failed to read list\n");
+      delete pine;
       return -6;
   }
-  printf("Tree:\n");
   pine->print(r);
 
   task = 1;
   t = clock();
   res = pine->solve1(pine->get_root());
+  t = (clock()-t)/CLOCKS_PER_SEC;
+  printf ("%s : Task = %d M = %d Result = %d Elapsed = %.2f\n", argv[0], task, k, res, t);
+
+  task = 2;
+  t = clock();
+  res = pine->solve2(pine->get_root());
+  t = (clock()-t)/CLOCKS_PER_SEC;
+  printf ("%s : Task = %d M = %d Result = %d Elapsed = %.2f\n", argv[0], task, k, res, t);
+
+  task = 3;
+  t = clock();
+  res = pine->solve3(pine->get_root());
+  t = (clock()-t)/CLOCKS_PER_SEC;
+  printf ("%s : Task = %d M = %d Result = %d Elapsed = %.2f\n", argv[0], task, k, res, t);
+
+  task = 4;
+  t = clock();
+  res = pine->solve4(pine->get_root());
+  t = (clock()-t)/CLOCKS_PER_SEC;
+  printf ("%s : Task = %d M = %d Result = %d Elapsed = %.2f\n", argv[0], task, k, res, t);
+
+  task = 5;
+  t = clock();
+  res = pine->solve5(pine->get_root());
   t = (clock()-t)/CLOCKS_PER_SEC;
   printf ("%s : Task = %d M = %d Result = %d Elapsed = %.2f\n", argv[0], task, k, res, t);
 

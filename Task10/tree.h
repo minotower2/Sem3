@@ -87,5 +87,6 @@ public:
   void update_max(tree_node<T> *curr, int *max);
   int calc_diff(tree_node<T> *curr);
   int solve5(tree_node<T> *curr);
+  int get_count_total(tree_node<T> *curr);
 };
 #endif
