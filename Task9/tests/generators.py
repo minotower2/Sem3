@@ -27,8 +27,8 @@ def generate_test(file_name, count, min_value, max_value, mode = "random",
 def generate_many_tests(task_number, min_length, max_length, step, 
                         attempts_number, file_basic_name):
     index = 0
-    min_value = -10
-    max_value = 10
+    min_value = -50
+    max_value = 50
     
     if task_number == 1:
         mode = "Cat"

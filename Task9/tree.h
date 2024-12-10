@@ -25,20 +25,20 @@ public:
   void print (int r) const {
     print_subtree (root, 0, r);
   }
-  io_status read (FILE * fp = stdin, unsigned int max_read = -1) {
+  io_status read(FILE * fp = stdin, unsigned int max_read = -1) {
     tree_node x; unsigned int count = 0;
     while(x.read(fp) == io_status::success && count < max_read) {
-      tree_node *curr = new tree_node ();
-      *curr = (tree_node&&) x;
-      if (curr == nullptr) {
-        delete_subtree(root);
+      tree_node * curr = new tree_node((tree_node&&)x);
+      if(curr == nullptr) {
         return io_status::memory;
       }
-      if (root == nullptr) root = curr;
+      if(root == nullptr) {
+        root = curr;
+      }
       else add_node_subtree(root, curr);
-      if (count == max_read) return io_status::success;
     }
-    if (!feof(fp)) return io_status::eof;
+    if(count == max_read) return io_status::success;
+    if(!feof(fp)) return io_status::format;
     return io_status::success;
   }
 private:
@@ -84,7 +84,7 @@ private:
         curr->down = x;
       }
     }
-    else { // *x > *curr 
+    else { // *x > *curr
       tree_node * p;
       for (p = curr->down; p->level; p = p->level);
       if (*p > *curr) // tail of the list of child nodes > *curr

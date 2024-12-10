@@ -280,9 +280,9 @@ def check_single_test(task_number, file_name, valgrind_status, precision, log_fi
 # ----------Для пользователя-----------
 # -------------------------------------
 
-min_length = 1
-step = 1
-max_length = 1
+min_length = 100
+step = 10
+max_length = 200
 attempts = [2, 3, 4, 5, 6]
 
 use_valgrind = True
@@ -296,7 +296,7 @@ if remake:
     print(subprocess.check_output(["make", "clean"]).decode("utf-8"))
     print(subprocess.check_output(["make"]).decode("utf-8"))
 
-generate_tests = False
+generate_tests = True
 have_to_run = True
 
 single_test = False

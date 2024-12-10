@@ -3,26 +3,26 @@
 Standard set tests:
 Test № 0     test.txt           Len: 0     k: 1      Memory: Good! Student: OK List2: OK
 Test № 1     test1.txt          Len: 1     k: 1      Memory: Good! Student: OK List2: OK
-Test № 2     test2.txt          Len: 7     k: 2      Memory: Leaks or SF! ==61277== Memcheck, a memory error detector
-==61277== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
-==61277== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
-==61277== Command: ./a.out 1 test2.txt 2
-==61277== 
-==61277== 
-==61277== HEAP SUMMARY:
-==61277==     in use at exit: 472 bytes in 1 blocks
-==61277==   total heap usage: 13 allocs, 12 frees, 82,544 bytes allocated
-==61277== 
-==61277== LEAK SUMMARY:
-==61277==    definitely lost: 0 bytes in 0 blocks
-==61277==    indirectly lost: 0 bytes in 0 blocks
-==61277==      possibly lost: 0 bytes in 0 blocks
-==61277==    still reachable: 472 bytes in 1 blocks
-==61277==         suppressed: 0 bytes in 0 blocks
-==61277== Rerun with --leak-check=full to see details of leaked memory
-==61277== 
-==61277== For lists of detected and suppressed errors, rerun with: -s
-==61277== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+Test № 2     test2.txt          Len: 7     k: 2      Memory: Leaks or SF! ==6856== Memcheck, a memory error detector
+==6856== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==6856== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
+==6856== Command: ./a.out 200 test2.txt 2
+==6856== 
+==6856== 
+==6856== HEAP SUMMARY:
+==6856==     in use at exit: 472 bytes in 1 blocks
+==6856==   total heap usage: 13 allocs, 12 frees, 82,544 bytes allocated
+==6856== 
+==6856== LEAK SUMMARY:
+==6856==    definitely lost: 0 bytes in 0 blocks
+==6856==    indirectly lost: 0 bytes in 0 blocks
+==6856==      possibly lost: 0 bytes in 0 blocks
+==6856==    still reachable: 472 bytes in 1 blocks
+==6856==         suppressed: 0 bytes in 0 blocks
+==6856== Rerun with --leak-check=full to see details of leaked memory
+==6856== 
+==6856== For lists of detected and suppressed errors, rerun with: -s
+==6856== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 Student: OK List2: OK
 Comment: Incorrect file!
 
@@ -61,3 +61,59 @@ Test № 11    a09.txt            Len: 40    k: 13     Memory: Good! Student: OK
 Test № 12    w.txt              Len: 28    k: 4      Memory: Good! Student: OK List2: OK
 Test № 12    w.txt              Len: 28    k: 2      Memory: Good! Student: OK List2: OK
  Summary:36 of 37 completed successfully!
+Test № 0     gentest0.txt       Len: 100   k: 2      Memory: Good! Student: OK List2: OK
+Test № 1     gentest1.txt       Len: 100   k: 3      Memory: Good! Student: OK List2: OK
+Test № 2     gentest2.txt       Len: 100   k: 4      Memory: Good! Student: OK List2: OK
+Test № 3     gentest3.txt       Len: 100   k: 5      Memory: Good! Student: OK List2: OK
+Test № 4     gentest4.txt       Len: 100   k: 6      Memory: Good! Student: OK List2: OK
+Test № 5     gentest5.txt       Len: 110   k: 2      Memory: Good! Student: OK List2: OK
+Test № 6     gentest6.txt       Len: 110   k: 3      Memory: Good! Student: OK List2: OK
+Test № 7     gentest7.txt       Len: 110   k: 4      Memory: Good! Student: OK List2: OK
+Test № 8     gentest8.txt       Len: 110   k: 5      Memory: Good! Student: OK List2: OK
+Test № 9     gentest9.txt       Len: 110   k: 6      Memory: Good! Student: OK List2: OK
+Test № 10    gentest10.txt      Len: 120   k: 2      Memory: Good! Student: OK List2: OK
+Test № 11    gentest11.txt      Len: 120   k: 3      Memory: Good! Student: OK List2: OK
+Test № 12    gentest12.txt      Len: 120   k: 4      Memory: Good! Student: OK List2: OK
+Test № 13    gentest13.txt      Len: 120   k: 5      Memory: Good! Student: OK List2: OK
+Test № 14    gentest14.txt      Len: 120   k: 6      Memory: Good! Student: OK List2: OK
+Test № 15    gentest15.txt      Len: 130   k: 2      Memory: Good! Student: OK List2: OK
+Test № 16    gentest16.txt      Len: 130   k: 3      Memory: Good! Student: OK List2: OK
+Test № 17    gentest17.txt      Len: 130   k: 4      Memory: Good! Student: OK List2: OK
+Test № 18    gentest18.txt      Len: 130   k: 5      Memory: Good! Student: OK List2: OK
+Test № 19    gentest19.txt      Len: 130   k: 6      Memory: Good! Student: OK List2: OK
+Test № 20    gentest20.txt      Len: 140   k: 2      Memory: Good! Student: OK List2: OK
+Test № 21    gentest21.txt      Len: 140   k: 3      Memory: Good! Student: OK List2: OK
+Test № 22    gentest22.txt      Len: 140   k: 4      Memory: Good! Student: OK List2: OK
+Test № 23    gentest23.txt      Len: 140   k: 5      Memory: Good! Student: OK List2: OK
+Test № 24    gentest24.txt      Len: 140   k: 6      Memory: Good! Student: OK List2: OK
+Test № 25    gentest25.txt      Len: 150   k: 2      Memory: Good! Student: OK List2: OK
+Test № 26    gentest26.txt      Len: 150   k: 3      Memory: Good! Student: OK List2: OK
+Test № 27    gentest27.txt      Len: 150   k: 4      Memory: Good! Student: OK List2: OK
+Test № 28    gentest28.txt      Len: 150   k: 5      Memory: Good! Student: OK List2: OK
+Test № 29    gentest29.txt      Len: 150   k: 6      Memory: Good! Student: OK List2: OK
+Test № 30    gentest30.txt      Len: 160   k: 2      Memory: Good! Student: OK List2: OK
+Test № 31    gentest31.txt      Len: 160   k: 3      Memory: Good! Student: OK List2: OK
+Test № 32    gentest32.txt      Len: 160   k: 4      Memory: Good! Student: OK List2: OK
+Test № 33    gentest33.txt      Len: 160   k: 5      Memory: Good! Student: OK List2: OK
+Test № 34    gentest34.txt      Len: 160   k: 6      Memory: Good! Student: OK List2: OK
+Test № 35    gentest35.txt      Len: 170   k: 2      Memory: Good! Student: OK List2: OK
+Test № 36    gentest36.txt      Len: 170   k: 3      Memory: Good! Student: OK List2: OK
+Test № 37    gentest37.txt      Len: 170   k: 4      Memory: Good! Student: OK List2: OK
+Test № 38    gentest38.txt      Len: 170   k: 5      Memory: Good! Student: OK List2: OK
+Test № 39    gentest39.txt      Len: 170   k: 6      Memory: Good! Student: OK List2: OK
+Test № 40    gentest40.txt      Len: 180   k: 2      Memory: Good! Student: OK List2: OK
+Test № 41    gentest41.txt      Len: 180   k: 3      Memory: Good! Student: OK List2: OK
+Test № 42    gentest42.txt      Len: 180   k: 4      Memory: Good! Student: OK List2: OK
+Test № 43    gentest43.txt      Len: 180   k: 5      Memory: Good! Student: OK List2: OK
+Test № 44    gentest44.txt      Len: 180   k: 6      Memory: Good! Student: OK List2: OK
+Test № 45    gentest45.txt      Len: 190   k: 2      Memory: Good! Student: OK List2: OK
+Test № 46    gentest46.txt      Len: 190   k: 3      Memory: Good! Student: OK List2: OK
+Test № 47    gentest47.txt      Len: 190   k: 4      Memory: Good! Student: OK List2: OK
+Test № 48    gentest48.txt      Len: 190   k: 5      Memory: Good! Student: OK List2: OK
+Test № 49    gentest49.txt      Len: 190   k: 6      Memory: Good! Student: OK List2: OK
+Test № 50    gentest50.txt      Len: 200   k: 2      Memory: Good! Student: OK List2: OK
+Test № 51    gentest51.txt      Len: 200   k: 3      Memory: Good! Student: OK List2: OK
+Test № 52    gentest52.txt      Len: 200   k: 4      Memory: Good! Student: OK List2: OK
+Test № 53    gentest53.txt      Len: 200   k: 5      Memory: Good! Student: OK List2: OK
+Test № 54    gentest54.txt      Len: 200   k: 6      Memory: Good! Student: OK List2: OK
+Summary: 55 of 55 completed successfully!
