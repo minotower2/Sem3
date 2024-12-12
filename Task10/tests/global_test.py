@@ -47,30 +47,11 @@ standard_set = [
                                       [[8, 7, 8, 4, 13], [10, 12, 8, 8, 10]]]],
     
     ]
-#     ["test11.txt", 2],
-#     ["test12.txt", 2],
-#     ["test21.txt", 2],
-#     ["test111.txt", 3],
-#     ["test123.txt", 3],
-#     ["test132.txt", 3],
-#     ["test213.txt", 3],
-#     ["test231.txt", 3],
-#     ["test312.txt", 3],
-#     ["test321.txt", 3]
-# ]
 
 
 # -----------------------
 # --------Запуск---------
 # -----------------------
-
-
-# def run_test(test_number: int, task: int, valgrind_status: bool, 
-#                     precision: int, file_name: str, size : int, log_file, only_log : bool):
-#     processing = process_test(task, valgrind_status, precision, file_name)
-#     log_result(test_number, size, valgrind_status, file_name, processing, log_file)
-#     if not(only_log):
-#         print_result(test_number, size, valgrind_status, file_name, processing)
 
 def check_test(test_number: int, tasks_count: int, valgrind_status: bool, 
                     precision: int, file_name: str, size : int, log_file, only_log : bool,
@@ -88,49 +69,6 @@ def check_test(test_number: int, tasks_count: int, valgrind_status: bool,
                               file_name, processing, result, string, k, log_file,
                               reference_answers, reference_check)
     
-
-# ------------------------
-# --------Печать----------
-# ------------------------
-
-# def print_result(test_number, size, valgrind_status, file_name, processing):
-#     print("Test № " + str(test_number).ljust(5) + " ", end = "")
-#     print(file_name.ljust(15) + " ", end="")
-#     print("Len: " + str(size).ljust(6) + " ", end="")
-    
-#     if valgrind_status:
-#         memory_status = processing[1]
-#         if memory_status == "Good!":
-#             print("Memory: Good! ", end="")
-#         else:
-#             print("Memory: Leaks or SF! ", end="")
-
-#     if processing[1] == []:
-#         print("Incorrect file!")
-#         return
-
-#     print("Original = " + str(processing[2]).ljust(40))
-#     print("Original = " + str(processing[4]).ljust(40))
-    
-# def log_result(test_number, size, valgrind_status, file_name, processing, log_file):
-#     log_file.write("Test № " + str(test_number).ljust(5) + " ")
-#     log_file.write(file_name.ljust(15) + " ")
-#     log_file.write("Len: " + str(size).ljust(5) + " ")
-
-#     if valgrind_status:
-#         memory_status = processing[1]
-#         if memory_status == "Good!":
-#             log_file.write("Memory: Good! ")
-#         else:
-#             log_file.write("Memory: Leaks or SF!\n")
-#             log_file.write(processing[0].stderr.decode("utf-8") + "\n")
-
-#     if processing[1] == []:
-#         log_file.write("Incorrect file!" + "\n")
-#         return
-
-#     print("Original = " + str(processing[2]).ljust(40) + "\n")
-#     print("Original = " + str(processing[4]).ljust(40) + "\n")
 
 # ------------------------------------
 # --------Печать с проверкой----------
@@ -202,31 +140,6 @@ def log_checked_result(test_number, task_number, size, valgrind_status,
     
     return status
 
-# ---------------------------------------
-# ------Массовый запуск------
-# ---------------------------------------
-
-# def run_on_standard_tests(tasks_number, standard_set, valgrind_status, 
-#                   precision, log_file, only_log):
-#     print("Standard set test:")
-#     i = 0
-#     for unit in standard_set:
-#         run_test(i, tasks_number, valgrind_status, precision, 
-#                  unit[0], unit[1], log_file, only_log)
-#         i += 1
-
-# def run_on_generated_tests(task_number, min_length, max_length, step, attempts_number,
-#                              file_basic_name, 
-#                       valgrind_status, precision, log_file, only_log):
-#     index = 0
-
-#     print("Generated tests:")
-#     for i in range(min_length, max_length + 1, step):
-#         for j in range(attempts_number):
-#             file_name = file_basic_name + str(task_number) + "_" + str(index) + ".txt"
-#             run_test(index, task_number, valgrind_status, 
-#                     precision, file_name, i, log_file, only_log)
-#             index += 1
 
 # -------------------------------------------------
 # ------Массовая автоматическая проверка-----------

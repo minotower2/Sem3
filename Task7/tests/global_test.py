@@ -8,17 +8,6 @@ log_file = "testlog.txt"
 standard_set = [
     ["test.txt", 0],
     ["test1.txt", 1]]
-#     ["test11.txt", 2],
-#     ["test12.txt", 2],
-#     ["test21.txt", 2],
-#     ["test111.txt", 3],
-#     ["test123.txt", 3],
-#     ["test132.txt", 3],
-#     ["test213.txt", 3],
-#     ["test231.txt", 3],
-#     ["test312.txt", 3],
-#     ["test321.txt", 3]
-# ]
 
 # ------------------------------------------
 # --------Генерация файла и ответов---------
@@ -41,9 +30,6 @@ from tree import Tree
 def get_answers(file_name):
     test_tree = Tree()
     test_tree.read_from_file(file_name)
-    #print(test_tree.nodes)
-    #print(test_tree.links)
-    #print(test_tree.vertices_levels())
 
     if test_tree.size() == 0:
         return [0, 0, 0, 0, 0]
