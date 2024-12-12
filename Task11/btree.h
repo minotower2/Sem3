@@ -208,5 +208,32 @@ public:
       solve2_recc(curr->children[i], k, count);
     }
   }
+  //===============================
+  //           Task 3
+  //===============================
+  int solve3(int k) {
+    int count = 0;
+    solve3_recc(root, k, &count);
+    return count;
+  }
+  int count_level_subtree(b_tree_node<T> *curr, int *num, int level) {
+    if (curr == nullptr) return 0;
+    if (*num < level) *num = level;
+    int size = curr->size;
+    int count = size;
+    for (int i = 0; i <= size; i++) {
+      count += count_level_subtree((curr->children)[i], num, level+1);
+    }
+    return count;
+  }
+  void solve3_recc(b_tree_node<T> *curr, int k, int *count) {
+    if (curr == nullptr) return;
+    int num = 0, c;
+    c = count_level_subtree(curr, &num, 1);
+    if (num <= k) {(*count) += c; return;}
+    for (int i = 0; i <= curr->size; i++) {
+      solve3_recc(curr->children[i], k, count);
+    }
+  }
 };
 #endif
