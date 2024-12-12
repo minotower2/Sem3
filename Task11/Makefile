@@ -1,11 +1,10 @@
 CPPFLAGS = -mfpmath=sse -fstack-protector-all -g -W -Wall -Wextra -Wunused -Wcast-align -Werror -pedantic -pedantic-errors -Wfloat-equal -Wpointer-arith -Wformat-security -Wmissing-format-attribute -Wformat=1 -Wwrite-strings -Wcast-align -Wno-long-long -Woverloaded-virtual -Wnon-virtual-dtor -Wcast-qual -Wno-suggest-attribute=format
-FUNCTIONS_O = 
 HEADERS = student.h btree_node.h btree.h
 MATH = -lm
 
 %.o: %.cpp $(HEADERS)
 	g++ -c $(CPPFLAGS) $<
-%.out: %.o $(FUNCTIONS_O)
+%.out: %.o
 	g++ $(CPPFLAGS) $^ -o $@ 
 all: a.out
 
