@@ -53,11 +53,19 @@ int main(int argc, char* argv[]) {
       return -7;
   }
   birch->print(r);
+
   task = 1;
   t = clock();
   res = birch->solve1(k);
   t = (clock()-t)/CLOCKS_PER_SEC;
   printf ("%s : Task = %d M = %d K = %d Result = %d Elapsed = %.2f\n", argv[0], task, m, k, res, t);
+
+  task = 2;
+  t = clock();
+  res = birch->solve2(k);
+  t = (clock()-t)/CLOCKS_PER_SEC;
+  printf ("%s : Task = %d M = %d K = %d Result = %d Elapsed = %.2f\n", argv[0], task, m, k, res, t);
+
   delete birch;
   fclose(fp);
   return 0;

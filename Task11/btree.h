@@ -163,6 +163,9 @@ private:
     return io_status::success;
   }
 public:
+  //===============================
+  //           Task 1
+  //===============================
   int solve1(int k) {
     int count = 0;
     solve1_recc(root, &count, k);
@@ -171,11 +174,38 @@ public:
   void solve1_recc(b_tree_node<T> *curr, int *count, int k) {
     if (curr == nullptr) return;
     int size = curr->size;
-    if (size == k) {
-      (*count)+=(size-1);
-    }
+    int j= 0;
+    for (b_tree_node<T> *p = (curr->children)[j]; p; p = (curr->children)[++j]);
+    if (j == k) (*count) += size;
     for (int i = 0; i <= size; i++) {
       if ((curr->children)[i]) solve1_recc((curr->children)[i], count, k);
+    }
+  }
+  //===============================
+  //           Task 2
+  //===============================
+  int solve2(int k) {
+    int count = 0;
+    solve2_recc(root, k, &count);
+    return count;
+  }
+  int count_subtree(b_tree_node<T> *curr, int *num) {
+    if (curr == nullptr) return 0;
+    (*num)++;
+    int size = curr->size;
+    int count = size;
+    for (int i = 0; i <= size; i++) {
+      count += count_subtree((curr->children)[i], num);
+    }
+    return count;
+  }
+  void solve2_recc(b_tree_node<T> *curr, int k, int *count) {
+    if (curr == nullptr) return;
+    int num = 0, c;
+    c = count_subtree(curr, &num);
+    if (num <= k) (*count) += c;
+    for (int i = 0; i <= curr->size; i++) {
+      solve2_recc(curr->children[i], k, count);
     }
   }
 };
