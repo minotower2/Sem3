@@ -56,5 +56,6 @@ int main(int argc, char* argv[]) {
   (void) task;
   (void) res;
   delete birch;
+  fclose(fp);
   return 0;
 }

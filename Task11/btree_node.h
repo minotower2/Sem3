@@ -43,7 +43,10 @@ private:
       delete [] values;
       values = nullptr;
     }
-    children = nullptr;
+    if (children) {
+      delete [] children;
+      children = nullptr;
+    }
   }
   void add_value (T& x, b_tree_node<T>* down, int index) {
     for (int i = size; i > index; i--) { 
