@@ -203,7 +203,7 @@ public:
     if (curr == nullptr) return;
     int num = 0, c;
     c = count_subtree(curr, &num);
-    if (num <= k) (*count) += c;
+    if (num <= k) {(*count) += c; return;}
     for (int i = 0; i <= curr->size; i++) {
       solve2_recc(curr->children[i], k, count);
     }
