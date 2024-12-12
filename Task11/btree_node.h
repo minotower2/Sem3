@@ -32,7 +32,7 @@ public:
   }
   void print (int p = 0, FILE * fp = stdout) const {
     for (int i = 0; i < size; ++i) {
-      for (int j = 0; j < p; j++) fprintf (fp, " ");
+      for (int j = 0; j < p; j++) fprintf (fp, "  ");
       fprintf (fp, "values[%2d] ", i + 1);
       values[i].print (fp);
     }

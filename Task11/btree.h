@@ -162,5 +162,21 @@ private:
     }
     return io_status::success;
   }
+public:
+  int solve1(int k) {
+    int count = 0;
+    solve1_recc(root, &count, k);
+    return count;
+  }
+  void solve1_recc(b_tree_node<T> *curr, int *count, int k) {
+    if (curr == nullptr) return;
+    int size = curr->size;
+    if (size == k) {
+      (*count)+=(size-1);
+    }
+    for (int i = 0; i <= size; i++) {
+      if ((curr->children)[i]) solve1_recc((curr->children)[i], count, k);
+    }
+  }
 };
 #endif
