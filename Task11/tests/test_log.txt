@@ -1,0 +1,563 @@
+Standard set tests:
+Test № 0     test.txt              Len: 0     m: 1   k: 1   Memory: Good! Student: OK
+Test № 1     test1.txt             Len: 1     m: 1   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 1, 1, 1, 0, 0]
+Auto: [0, 1, 1, 1, 0, 1]
+Ref: [0, 1, 1, 1, 0, 1]
+Test № 2     test2.txt             Len: 7     m: 1   k: 1   Memory: Leaks or SF! ==11563== Memcheck, a memory error detector
+==11563== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==11563== Using Valgrind-3.23.0 and LibVEX; rerun with -h for copyright info
+==11563== Command: ./a.out 1 100 1 test2.txt
+==11563== 
+==11563== Conditional jump or move depends on uninitialised value(s)
+==11563==    at 0x404A6A: b_tree<student>::add_value_subtree(b_tree_node<student>*&, b_tree_node<student>*&, student&, int) (btree.h:86)
+==11563==    by 0x401365: add_value (btree.h:62)
+==11563==    by 0x401365: read (btree.h:19)
+==11563==    by 0x401365: main (a.cpp:30)
+==11563== 
+==11563== Conditional jump or move depends on uninitialised value(s)
+==11563==    at 0x403FDE: delete_subtree (btree.h:34)
+==11563==    by 0x403FDE: delete_subtree (btree.h:35)
+==11563==    by 0x403FDE: delete_subtree (btree.h:33)
+==11563==    by 0x403FDE: b_tree<student>::delete_subtree(b_tree_node<student>*) [clone .part.0] (btree.h:35)
+==11563==    by 0x4019A1: delete_subtree (btree.h:34)
+==11563==    by 0x4019A1: ~b_tree (btree.h:12)
+==11563==    by 0x4019A1: main (a.cpp:36)
+==11563== 
+==11563== 
+==11563== HEAP SUMMARY:
+==11563==     in use at exit: 472 bytes in 1 blocks
+==11563==   total heap usage: 18 allocs, 17 frees, 82,688 bytes allocated
+==11563== 
+==11563== LEAK SUMMARY:
+==11563==    definitely lost: 0 bytes in 0 blocks
+==11563==    indirectly lost: 0 bytes in 0 blocks
+==11563==      possibly lost: 0 bytes in 0 blocks
+==11563==    still reachable: 472 bytes in 1 blocks
+==11563==         suppressed: 0 bytes in 0 blocks
+==11563== Rerun with --leak-check=full to see details of leaked memory
+==11563== 
+==11563== Use --track-origins=yes to see where uninitialised values come from
+==11563== For lists of detected and suppressed errors, rerun with: -s
+==11563== ERROR SUMMARY: 4 errors from 2 contexts (suppressed: 0 from 0)
+Student: OK
+Comment: Incorrect file!
+
+ Summary:1 of 3 completed successfully!
+Test № 0     gentest0_1_0.txt      Len: 1     m: 1   k: 0   Memory: Good! Student: OK
+Test № 1     gentest1_1_1.txt      Len: 1     m: 1   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 1, 1, 1, 0, 0]
+Auto: [0, 1, 1, 1, 0, 1]
+Test № 2     gentest2_1_2.txt      Len: 1     m: 1   k: 2   Memory: Good! Student: OK
+Test № 3     gentest3_1_3.txt      Len: 1     m: 1   k: 3   Memory: Good! Student: OK
+Test № 4     gentest4_1_4.txt      Len: 1     m: 1   k: 4   Memory: Good! Student: OK
+Test № 5     gentest5_2_0.txt      Len: 1     m: 2   k: 0   Memory: Good! Student: OK
+Test № 6     gentest6_2_1.txt      Len: 1     m: 2   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 1, 1, 1, 0, 0]
+Auto: [0, 1, 1, 1, 0, 1]
+Test № 7     gentest7_2_2.txt      Len: 1     m: 2   k: 2   Memory: Good! Student: OK
+Test № 8     gentest8_2_3.txt      Len: 1     m: 2   k: 3   Memory: Good! Student: OK
+Test № 9     gentest9_2_4.txt      Len: 1     m: 2   k: 4   Memory: Good! Student: OK
+Test № 10    gentest10_3_0.txt     Len: 1     m: 3   k: 0   Memory: Good! Student: OK
+Test № 11    gentest11_3_1.txt     Len: 1     m: 3   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 1, 1, 1, 0, 0]
+Auto: [0, 1, 1, 1, 0, 1]
+Test № 12    gentest12_3_2.txt     Len: 1     m: 3   k: 2   Memory: Good! Student: OK
+Test № 13    gentest13_3_3.txt     Len: 1     m: 3   k: 3   Memory: Good! Student: OK
+Test № 14    gentest14_3_4.txt     Len: 1     m: 3   k: 4   Memory: Good! Student: OK
+Test № 15    gentest15_4_0.txt     Len: 1     m: 4   k: 0   Memory: Good! Student: OK
+Test № 16    gentest16_4_1.txt     Len: 1     m: 4   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 1, 1, 1, 0, 0]
+Auto: [0, 1, 1, 1, 0, 1]
+Test № 17    gentest17_4_2.txt     Len: 1     m: 4   k: 2   Memory: Good! Student: OK
+Test № 18    gentest18_4_3.txt     Len: 1     m: 4   k: 3   Memory: Good! Student: OK
+Test № 19    gentest19_4_4.txt     Len: 1     m: 4   k: 4   Memory: Good! Student: OK
+Test № 20    gentest20_5_0.txt     Len: 1     m: 5   k: 0   Memory: Good! Student: OK
+Test № 21    gentest21_5_1.txt     Len: 1     m: 5   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 1, 1, 1, 0, 0]
+Auto: [0, 1, 1, 1, 0, 1]
+Test № 22    gentest22_5_2.txt     Len: 1     m: 5   k: 2   Memory: Good! Student: OK
+Test № 23    gentest23_5_3.txt     Len: 1     m: 5   k: 3   Memory: Good! Student: OK
+Test № 24    gentest24_5_4.txt     Len: 1     m: 5   k: 4   Memory: Good! Student: OK
+Test № 25    gentest25_1_0.txt     Len: 11    m: 1   k: 0   Memory: Good! Student: OK
+Test № 26    gentest26_1_1.txt     Len: 11    m: 1   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 7, 7, 7, 3, 0]
+Auto: [0, 7, 7, 7, 3, 1]
+Test № 27    gentest27_1_2.txt     Len: 11    m: 1   k: 2   Memory: Good! Student: Wrong Ans
+Your: [2, 7, 10, 8, 7, 0]
+Auto: [2, 7, 10, 8, 7, 4]
+Test № 28    gentest28_1_3.txt     Len: 11    m: 1   k: 3   Memory: Good! Student: Wrong Ans
+Your: [4, 6, 11, 10, 0, 0]
+Auto: [4, 6, 11, 10, 0, 11]
+Test № 29    gentest29_1_4.txt     Len: 11    m: 1   k: 4   Memory: Good! Student: OK
+Test № 30    gentest30_2_0.txt     Len: 11    m: 2   k: 0   Memory: Good! Student: OK
+Test № 31    gentest31_2_1.txt     Len: 11    m: 2   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 9, 9, 9, 9, 0]
+Auto: [0, 9, 9, 9, 9, 2]
+Test № 32    gentest32_2_2.txt     Len: 11    m: 2   k: 2   Memory: Good! Student: Wrong Ans
+Your: [0, 9, 11, 9, 0, 0]
+Auto: [0, 9, 11, 9, 0, 11]
+Test № 33    gentest33_2_3.txt     Len: 11    m: 2   k: 3   Memory: Good! Student: OK
+Test № 34    gentest34_2_4.txt     Len: 11    m: 2   k: 4   Memory: Good! Student: OK
+Test № 35    gentest35_3_0.txt     Len: 11    m: 3   k: 0   Memory: Good! Student: OK
+Test № 36    gentest36_3_1.txt     Len: 11    m: 3   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 10, 10, 10, 10, 0]
+Auto: [0, 10, 10, 10, 10, 1]
+Test № 37    gentest37_3_2.txt     Len: 11    m: 3   k: 2   Memory: Good! Student: Wrong Ans
+Your: [1, 10, 11, 11, 0, 0]
+Auto: [1, 10, 11, 11, 0, 11]
+Test № 38    gentest38_3_3.txt     Len: 11    m: 3   k: 3   Memory: Good! Student: OK
+Test № 39    gentest39_3_4.txt     Len: 11    m: 3   k: 4   Memory: Good! Student: OK
+Test № 40    gentest40_4_0.txt     Len: 11    m: 4   k: 0   Memory: Good! Student: OK
+Test № 41    gentest41_4_1.txt     Len: 11    m: 4   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 10, 10, 10, 10, 0]
+Auto: [0, 10, 10, 10, 10, 1]
+Test № 42    gentest42_4_2.txt     Len: 11    m: 4   k: 2   Memory: Good! Student: Wrong Ans
+Your: [1, 10, 11, 11, 0, 0]
+Auto: [1, 10, 11, 11, 0, 11]
+Test № 43    gentest43_4_3.txt     Len: 11    m: 4   k: 3   Memory: Good! Student: OK
+Test № 44    gentest44_4_4.txt     Len: 11    m: 4   k: 4   Memory: Good! Student: OK
+Test № 45    gentest45_5_0.txt     Len: 11    m: 5   k: 0   Memory: Good! Student: OK
+Test № 46    gentest46_5_1.txt     Len: 11    m: 5   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 10, 10, 10, 10, 0]
+Auto: [0, 10, 10, 10, 10, 1]
+Test № 47    gentest47_5_2.txt     Len: 11    m: 5   k: 2   Memory: Good! Student: Wrong Ans
+Your: [1, 10, 11, 11, 0, 0]
+Auto: [1, 10, 11, 11, 0, 11]
+Test № 48    gentest48_5_3.txt     Len: 11    m: 5   k: 3   Memory: Good! Student: OK
+Test № 49    gentest49_5_4.txt     Len: 11    m: 5   k: 4   Memory: Good! Student: OK
+Test № 50    gentest50_1_0.txt     Len: 21    m: 1   k: 0   Memory: Good! Student: OK
+Test № 51    gentest51_1_1.txt     Len: 21    m: 1   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 12, 12, 12, 3, 0]
+Auto: [0, 12, 12, 12, 3, 1]
+Test № 52    gentest52_1_2.txt     Len: 21    m: 1   k: 2   Memory: Good! Student: Wrong Ans
+Your: [6, 13, 18, 16, 5, 0]
+Auto: [6, 13, 18, 16, 5, 3]
+Test № 53    gentest53_1_3.txt     Len: 21    m: 1   k: 3   Memory: Good! Student: Wrong Ans
+Your: [2, 16, 20, 18, 13, 0]
+Auto: [2, 16, 20, 18, 13, 8]
+Test № 54    gentest54_1_4.txt     Len: 21    m: 1   k: 4   Memory: Good! Student: Wrong Ans
+Your: [0, 18, 21, 19, 0, 0]
+Auto: [0, 18, 21, 19, 0, 21]
+Test № 55    gentest55_2_0.txt     Len: 21    m: 2   k: 0   Memory: Good! Student: OK
+Test № 56    gentest56_2_1.txt     Len: 21    m: 2   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 17, 17, 17, 17, 0]
+Auto: [0, 17, 17, 17, 17, 4]
+Test № 57    gentest57_2_2.txt     Len: 21    m: 2   k: 2   Memory: Good! Student: Wrong Ans
+Your: [1, 16, 20, 16, 16, 0]
+Auto: [1, 16, 20, 16, 16, 5]
+Test № 58    gentest58_2_3.txt     Len: 21    m: 2   k: 3   Memory: Good! Student: Wrong Ans
+Your: [2, 15, 21, 17, 0, 0]
+Auto: [2, 15, 21, 17, 0, 21]
+Test № 59    gentest59_2_4.txt     Len: 21    m: 2   k: 4   Memory: Good! Student: OK
+Test № 60    gentest60_3_0.txt     Len: 21    m: 3   k: 0   Memory: Good! Student: OK
+Test № 61    gentest61_3_1.txt     Len: 21    m: 3   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 18, 18, 18, 18, 0]
+Auto: [0, 18, 18, 18, 18, 3]
+Test № 62    gentest62_3_2.txt     Len: 21    m: 3   k: 2   Memory: Good! Student: Wrong Ans
+Your: [0, 18, 21, 18, 0, 0]
+Auto: [0, 18, 21, 18, 0, 21]
+Test № 63    gentest63_3_3.txt     Len: 21    m: 3   k: 3   Memory: Good! Student: OK
+Test № 64    gentest64_3_4.txt     Len: 21    m: 3   k: 4   Memory: Good! Student: OK
+Test № 65    gentest65_4_0.txt     Len: 21    m: 4   k: 0   Memory: Good! Student: OK
+Test № 66    gentest66_4_1.txt     Len: 21    m: 4   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 19, 19, 19, 19, 0]
+Auto: [0, 19, 19, 19, 19, 2]
+Test № 67    gentest67_4_2.txt     Len: 21    m: 4   k: 2   Memory: Good! Student: Wrong Ans
+Your: [0, 18, 21, 18, 0, 0]
+Auto: [0, 18, 21, 18, 0, 21]
+Test № 68    gentest68_4_3.txt     Len: 21    m: 4   k: 3   Memory: Good! Student: OK
+Test № 69    gentest69_4_4.txt     Len: 21    m: 4   k: 4   Memory: Good! Student: OK
+Test № 70    gentest70_5_0.txt     Len: 21    m: 5   k: 0   Memory: Good! Student: OK
+Test № 71    gentest71_5_1.txt     Len: 21    m: 5   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 19, 19, 19, 19, 0]
+Auto: [0, 19, 19, 19, 19, 2]
+Test № 72    gentest72_5_2.txt     Len: 21    m: 5   k: 2   Memory: Good! Student: Wrong Ans
+Your: [1, 20, 21, 21, 0, 0]
+Auto: [1, 20, 21, 21, 0, 21]
+Test № 73    gentest73_5_3.txt     Len: 21    m: 5   k: 3   Memory: Good! Student: OK
+Test № 74    gentest74_5_4.txt     Len: 21    m: 5   k: 4   Memory: Good! Student: OK
+Test № 75    gentest75_1_0.txt     Len: 31    m: 1   k: 0   Memory: Good! Student: OK
+Test № 76    gentest76_1_1.txt     Len: 31    m: 1   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 18, 18, 18, 4, 0]
+Auto: [0, 18, 18, 18, 4, 1]
+Test № 77    gentest77_1_2.txt     Len: 31    m: 1   k: 2   Memory: Good! Student: Wrong Ans
+Your: [3, 18, 27, 19, 9, 0]
+Auto: [3, 18, 27, 19, 9, 4]
+Test № 78    gentest78_1_3.txt     Len: 31    m: 1   k: 3   Memory: Good! Student: Wrong Ans
+Your: [8, 22, 30, 26, 18, 0]
+Auto: [8, 22, 30, 26, 18, 13]
+Test № 79    gentest79_1_4.txt     Len: 31    m: 1   k: 4   Memory: Good! Student: Wrong Ans
+Your: [0, 26, 31, 27, 0, 0]
+Auto: [0, 26, 31, 27, 0, 31]
+Test № 80    gentest80_2_0.txt     Len: 31    m: 2   k: 0   Memory: Good! Student: OK
+Test № 81    gentest81_2_1.txt     Len: 31    m: 2   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 24, 24, 24, 6, 0]
+Auto: [0, 24, 24, 24, 6, 1]
+Test № 82    gentest82_2_2.txt     Len: 31    m: 2   k: 2   Memory: Good! Student: Wrong Ans
+Your: [1, 23, 30, 23, 23, 0]
+Auto: [1, 23, 30, 23, 23, 8]
+Test № 83    gentest83_2_3.txt     Len: 31    m: 2   k: 3   Memory: Good! Student: Wrong Ans
+Your: [0, 23, 31, 23, 0, 0]
+Auto: [0, 23, 31, 23, 0, 31]
+Test № 84    gentest84_2_4.txt     Len: 31    m: 2   k: 4   Memory: Good! Student: OK
+Test № 85    gentest85_3_0.txt     Len: 31    m: 3   k: 0   Memory: Good! Student: OK
+Test № 86    gentest86_3_1.txt     Len: 31    m: 3   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 25, 25, 25, 25, 0]
+Auto: [0, 25, 25, 25, 25, 6]
+Test № 87    gentest87_3_2.txt     Len: 31    m: 3   k: 2   Memory: Good! Student: Wrong Ans
+Your: [0, 25, 31, 25, 0, 0]
+Auto: [0, 25, 31, 25, 0, 31]
+Test № 88    gentest88_3_3.txt     Len: 31    m: 3   k: 3   Memory: Good! Student: OK
+Test № 89    gentest89_3_4.txt     Len: 31    m: 3   k: 4   Memory: Good! Student: OK
+Test № 90    gentest90_4_0.txt     Len: 31    m: 4   k: 0   Memory: Good! Student: OK
+Test № 91    gentest91_4_1.txt     Len: 31    m: 4   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 27, 27, 27, 27, 0]
+Auto: [0, 27, 27, 27, 27, 4]
+Test № 92    gentest92_4_2.txt     Len: 31    m: 4   k: 2   Memory: Good! Student: Wrong Ans
+Your: [0, 27, 31, 27, 0, 0]
+Auto: [0, 27, 31, 27, 0, 31]
+Test № 93    gentest93_4_3.txt     Len: 31    m: 4   k: 3   Memory: Good! Student: OK
+Test № 94    gentest94_4_4.txt     Len: 31    m: 4   k: 4   Memory: Good! Student: OK
+Test № 95    gentest95_5_0.txt     Len: 31    m: 5   k: 0   Memory: Good! Student: OK
+Test № 96    gentest96_5_1.txt     Len: 31    m: 5   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 28, 28, 28, 28, 0]
+Auto: [0, 28, 28, 28, 28, 3]
+Test № 97    gentest97_5_2.txt     Len: 31    m: 5   k: 2   Memory: Good! Student: Wrong Ans
+Your: [0, 28, 31, 28, 0, 0]
+Auto: [0, 28, 31, 28, 0, 31]
+Test № 98    gentest98_5_3.txt     Len: 31    m: 5   k: 3   Memory: Good! Student: OK
+Test № 99    gentest99_5_4.txt     Len: 31    m: 5   k: 4   Memory: Good! Student: OK
+Test № 100   gentest100_1_0.txt    Len: 41    m: 1   k: 0   Memory: Good! Student: OK
+Test № 101   gentest101_1_1.txt    Len: 41    m: 1   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 23, 23, 23, 2, 0]
+Auto: [0, 23, 23, 23, 2, 1]
+Test № 102   gentest102_1_2.txt    Len: 41    m: 1   k: 2   Memory: Good! Student: Wrong Ans
+Your: [12, 23, 34, 28, 4, 0]
+Auto: [12, 23, 34, 28, 4, 3]
+Test № 103   gentest103_1_3.txt    Len: 41    m: 1   k: 3   Memory: Good! Student: Wrong Ans
+Your: [12, 27, 39, 35, 24, 0]
+Auto: [12, 27, 39, 35, 24, 17]
+Test № 104   gentest104_1_4.txt    Len: 41    m: 1   k: 4   Memory: Good! Student: Wrong Ans
+Your: [0, 35, 41, 35, 0, 0]
+Auto: [0, 35, 41, 35, 0, 41]
+Test № 105   gentest105_2_0.txt    Len: 41    m: 2   k: 0   Memory: Good! Student: OK
+Test № 106   gentest106_2_1.txt    Len: 41    m: 2   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 31, 31, 31, 8, 0]
+Auto: [0, 31, 31, 31, 8, 2]
+Test № 107   gentest107_2_2.txt    Len: 41    m: 2   k: 2   Memory: Good! Student: Wrong Ans
+Your: [0, 30, 39, 30, 30, 0]
+Auto: [0, 30, 39, 30, 30, 11]
+Test № 108   gentest108_2_3.txt    Len: 41    m: 2   k: 3   Memory: Good! Student: Wrong Ans
+Your: [6, 31, 41, 35, 0, 0]
+Auto: [6, 31, 41, 35, 0, 41]
+Test № 109   gentest109_2_4.txt    Len: 41    m: 2   k: 4   Memory: Good! Student: OK
+Test № 110   gentest110_3_0.txt    Len: 41    m: 3   k: 0   Memory: Good! Student: OK
+Test № 111   gentest111_3_1.txt    Len: 41    m: 3   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 34, 34, 34, 6, 0]
+Auto: [0, 34, 34, 34, 6, 1]
+Test № 112   gentest112_3_2.txt    Len: 41    m: 3   k: 2   Memory: Good! Student: Wrong Ans
+Your: [1, 32, 40, 32, 32, 0]
+Auto: [1, 32, 40, 32, 32, 9]
+Test № 113   gentest113_3_3.txt    Len: 41    m: 3   k: 3   Memory: Good! Student: Wrong Ans
+Your: [0, 34, 41, 34, 0, 0]
+Auto: [0, 34, 41, 34, 0, 41]
+Test № 114   gentest114_3_4.txt    Len: 41    m: 3   k: 4   Memory: Good! Student: OK
+Test № 115   gentest115_4_0.txt    Len: 41    m: 4   k: 0   Memory: Good! Student: OK
+Test № 116   gentest116_4_1.txt    Len: 41    m: 4   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 35, 35, 35, 35, 0]
+Auto: [0, 35, 35, 35, 35, 6]
+Test № 117   gentest117_4_2.txt    Len: 41    m: 4   k: 2   Memory: Good! Student: Wrong Ans
+Your: [0, 35, 41, 35, 0, 0]
+Auto: [0, 35, 41, 35, 0, 41]
+Test № 118   gentest118_4_3.txt    Len: 41    m: 4   k: 3   Memory: Good! Student: OK
+Test № 119   gentest119_4_4.txt    Len: 41    m: 4   k: 4   Memory: Good! Student: OK
+Test № 120   gentest120_5_0.txt    Len: 41    m: 5   k: 0   Memory: Good! Student: OK
+Test № 121   gentest121_5_1.txt    Len: 41    m: 5   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 37, 37, 37, 37, 0]
+Auto: [0, 37, 37, 37, 37, 4]
+Test № 122   gentest122_5_2.txt    Len: 41    m: 5   k: 2   Memory: Good! Student: Wrong Ans
+Your: [0, 37, 41, 37, 0, 0]
+Auto: [0, 37, 41, 37, 0, 41]
+Test № 123   gentest123_5_3.txt    Len: 41    m: 5   k: 3   Memory: Good! Student: OK
+Test № 124   gentest124_5_4.txt    Len: 41    m: 5   k: 4   Memory: Good! Student: OK
+Test № 125   gentest125_1_0.txt    Len: 51    m: 1   k: 0   Memory: Good! Student: OK
+Test № 126   gentest126_1_1.txt    Len: 51    m: 1   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 28, 28, 28, 2, 0]
+Auto: [0, 28, 28, 28, 2, 1]
+Test № 127   gentest127_1_2.txt    Len: 51    m: 1   k: 2   Memory: Good! Student: Wrong Ans
+Your: [11, 30, 43, 35, 5, 0]
+Auto: [11, 30, 43, 35, 5, 3]
+Test № 128   gentest128_1_3.txt    Len: 51    m: 1   k: 3   Memory: Good! Student: Wrong Ans
+Your: [8, 37, 48, 43, 12, 0]
+Auto: [8, 37, 48, 43, 12, 8]
+Test № 129   gentest129_1_4.txt    Len: 51    m: 1   k: 4   Memory: Good! Student: Wrong Ans
+Your: [0, 43, 51, 43, 0, 0]
+Auto: [0, 43, 51, 43, 0, 51]
+Test № 130   gentest130_2_0.txt    Len: 51    m: 2   k: 0   Memory: Good! Student: OK
+Test № 131   gentest131_2_1.txt    Len: 51    m: 2   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 38, 38, 38, 10, 0]
+Auto: [0, 38, 38, 38, 10, 3]
+Test № 132   gentest132_2_2.txt    Len: 51    m: 2   k: 2   Memory: Good! Student: Wrong Ans
+Your: [0, 38, 49, 38, 38, 0]
+Auto: [0, 38, 49, 38, 38, 13]
+Test № 133   gentest133_2_3.txt    Len: 51    m: 2   k: 3   Memory: Good! Student: Wrong Ans
+Your: [4, 39, 51, 41, 0, 0]
+Auto: [4, 39, 51, 41, 0, 51]
+Test № 134   gentest134_2_4.txt    Len: 51    m: 2   k: 4   Memory: Good! Student: OK
+Test № 135   gentest135_3_0.txt    Len: 51    m: 3   k: 0   Memory: Good! Student: OK
+Test № 136   gentest136_3_1.txt    Len: 51    m: 3   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 43, 43, 43, 7, 0]
+Auto: [0, 43, 43, 43, 7, 1]
+Test № 137   gentest137_3_2.txt    Len: 51    m: 3   k: 2   Memory: Good! Student: Wrong Ans
+Your: [1, 42, 50, 42, 42, 0]
+Auto: [1, 42, 50, 42, 42, 9]
+Test № 138   gentest138_3_3.txt    Len: 51    m: 3   k: 3   Memory: Good! Student: Wrong Ans
+Your: [0, 42, 51, 42, 0, 0]
+Auto: [0, 42, 51, 42, 0, 51]
+Test № 139   gentest139_3_4.txt    Len: 51    m: 3   k: 4   Memory: Good! Student: OK
+Test № 140   gentest140_4_0.txt    Len: 51    m: 4   k: 0   Memory: Good! Student: OK
+Test № 141   gentest141_4_1.txt    Len: 51    m: 4   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 44, 44, 44, 44, 0]
+Auto: [0, 44, 44, 44, 44, 7]
+Test № 142   gentest142_4_2.txt    Len: 51    m: 4   k: 2   Memory: Good! Student: Wrong Ans
+Your: [0, 44, 51, 44, 0, 0]
+Auto: [0, 44, 51, 44, 0, 51]
+Test № 143   gentest143_4_3.txt    Len: 51    m: 4   k: 3   Memory: Good! Student: OK
+Test № 144   gentest144_4_4.txt    Len: 51    m: 4   k: 4   Memory: Good! Student: OK
+Test № 145   gentest145_5_0.txt    Len: 51    m: 5   k: 0   Memory: Good! Student: OK
+Test № 146   gentest146_5_1.txt    Len: 51    m: 5   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 45, 45, 45, 45, 0]
+Auto: [0, 45, 45, 45, 45, 6]
+Test № 147   gentest147_5_2.txt    Len: 51    m: 5   k: 2   Memory: Good! Student: Wrong Ans
+Your: [0, 46, 51, 46, 0, 0]
+Auto: [0, 46, 51, 46, 0, 51]
+Test № 148   gentest148_5_3.txt    Len: 51    m: 5   k: 3   Memory: Good! Student: OK
+Test № 149   gentest149_5_4.txt    Len: 51    m: 5   k: 4   Memory: Good! Student: OK
+Test № 150   gentest150_1_0.txt    Len: 61    m: 1   k: 0   Memory: Good! Student: OK
+Test № 151   gentest151_1_1.txt    Len: 61    m: 1   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 34, 34, 34, 3, 0]
+Auto: [0, 34, 34, 34, 3, 1]
+Test № 152   gentest152_1_2.txt    Len: 61    m: 1   k: 2   Memory: Good! Student: Wrong Ans
+Your: [13, 34, 50, 42, 7, 0]
+Auto: [13, 34, 50, 42, 7, 4]
+Test № 153   gentest153_1_3.txt    Len: 61    m: 1   k: 3   Memory: Good! Student: Wrong Ans
+Your: [14, 41, 57, 51, 16, 0]
+Auto: [14, 41, 57, 51, 16, 10]
+Test № 154   gentest154_1_4.txt    Len: 61    m: 1   k: 4   Memory: Good! Student: Wrong Ans
+Your: [0, 52, 60, 53, 38, 0]
+Auto: [0, 52, 60, 53, 38, 23]
+Test № 155   gentest155_2_0.txt    Len: 61    m: 2   k: 0   Memory: Good! Student: OK
+Test № 156   gentest156_2_1.txt    Len: 61    m: 2   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 45, 45, 45, 12, 0]
+Auto: [0, 45, 45, 45, 12, 4]
+Test № 157   gentest157_2_2.txt    Len: 61    m: 2   k: 2   Memory: Good! Student: Wrong Ans
+Your: [0, 47, 58, 47, 47, 0]
+Auto: [0, 47, 58, 47, 47, 14]
+Test № 158   gentest158_2_3.txt    Len: 61    m: 2   k: 3   Memory: Good! Student: Wrong Ans
+Your: [2, 46, 61, 48, 0, 0]
+Auto: [2, 46, 61, 48, 0, 61]
+Test № 159   gentest159_2_4.txt    Len: 61    m: 2   k: 4   Memory: Good! Student: OK
+Test № 160   gentest160_3_0.txt    Len: 61    m: 3   k: 0   Memory: Good! Student: OK
+Test № 161   gentest161_3_1.txt    Len: 61    m: 3   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 51, 51, 51, 9, 0]
+Auto: [0, 51, 51, 51, 9, 1]
+Test № 162   gentest162_3_2.txt    Len: 61    m: 3   k: 2   Memory: Good! Student: Wrong Ans
+Your: [1, 50, 60, 50, 50, 0]
+Auto: [1, 50, 60, 50, 50, 11]
+Test № 163   gentest163_3_3.txt    Len: 61    m: 3   k: 3   Memory: Good! Student: Wrong Ans
+Your: [2, 49, 61, 49, 0, 0]
+Auto: [2, 49, 61, 49, 0, 61]
+Test № 164   gentest164_3_4.txt    Len: 61    m: 3   k: 4   Memory: Good! Student: OK
+Test № 165   gentest165_4_0.txt    Len: 61    m: 4   k: 0   Memory: Good! Student: OK
+Test № 166   gentest166_4_1.txt    Len: 61    m: 4   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 52, 52, 52, 8, 0]
+Auto: [0, 52, 52, 52, 8, 1]
+Test № 167   gentest167_4_2.txt    Len: 61    m: 4   k: 2   Memory: Good! Student: Wrong Ans
+Your: [1, 52, 60, 52, 52, 0]
+Auto: [1, 52, 60, 52, 52, 9]
+Test № 168   gentest168_4_3.txt    Len: 61    m: 4   k: 3   Memory: Good! Student: Wrong Ans
+Your: [0, 52, 61, 52, 0, 0]
+Auto: [0, 52, 61, 52, 0, 61]
+Test № 169   gentest169_4_4.txt    Len: 61    m: 4   k: 4   Memory: Good! Student: OK
+Test № 170   gentest170_5_0.txt    Len: 61    m: 5   k: 0   Memory: Good! Student: OK
+Test № 171   gentest171_5_1.txt    Len: 61    m: 5   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 55, 55, 55, 55, 0]
+Auto: [0, 55, 55, 55, 55, 6]
+Test № 172   gentest172_5_2.txt    Len: 61    m: 5   k: 2   Memory: Good! Student: Wrong Ans
+Your: [0, 55, 61, 55, 0, 0]
+Auto: [0, 55, 61, 55, 0, 61]
+Test № 173   gentest173_5_3.txt    Len: 61    m: 5   k: 3   Memory: Good! Student: OK
+Test № 174   gentest174_5_4.txt    Len: 61    m: 5   k: 4   Memory: Good! Student: OK
+Test № 175   gentest175_1_0.txt    Len: 71    m: 1   k: 0   Memory: Good! Student: OK
+Test № 176   gentest176_1_1.txt    Len: 71    m: 1   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 41, 41, 41, 3, 0]
+Auto: [0, 41, 41, 41, 3, 2]
+Test № 177   gentest177_1_2.txt    Len: 71    m: 1   k: 2   Memory: Good! Student: Wrong Ans
+Your: [16, 43, 60, 50, 6, 0]
+Auto: [16, 43, 60, 50, 6, 5]
+Test № 178   gentest178_1_3.txt    Len: 71    m: 1   k: 3   Memory: Good! Student: Wrong Ans
+Your: [16, 51, 67, 59, 17, 0]
+Auto: [16, 51, 67, 59, 17, 12]
+Test № 179   gentest179_1_4.txt    Len: 71    m: 1   k: 4   Memory: Good! Student: Wrong Ans
+Your: [0, 59, 70, 62, 42, 0]
+Auto: [0, 59, 70, 62, 42, 29]
+Test № 180   gentest180_2_0.txt    Len: 71    m: 2   k: 0   Memory: Good! Student: OK
+Test № 181   gentest181_2_1.txt    Len: 71    m: 2   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 51, 51, 51, 16, 0]
+Auto: [0, 51, 51, 51, 16, 4]
+Test № 182   gentest182_2_2.txt    Len: 71    m: 2   k: 2   Memory: Good! Student: Wrong Ans
+Your: [0, 52, 67, 52, 52, 0]
+Auto: [0, 52, 67, 52, 52, 19]
+Test № 183   gentest183_2_3.txt    Len: 71    m: 2   k: 3   Memory: Good! Student: Wrong Ans
+Your: [12, 51, 70, 59, 51, 0]
+Auto: [12, 51, 70, 59, 51, 20]
+Test № 184   gentest184_2_4.txt    Len: 71    m: 2   k: 4   Memory: Good! Student: Wrong Ans
+Your: [3, 59, 71, 62, 0, 0]
+Auto: [3, 59, 71, 62, 0, 71]
+Test № 185   gentest185_3_0.txt    Len: 71    m: 3   k: 0   Memory: Good! Student: OK
+Test № 186   gentest186_3_1.txt    Len: 71    m: 3   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 57, 57, 57, 12, 0]
+Auto: [0, 57, 57, 57, 12, 2]
+Test № 187   gentest187_3_2.txt    Len: 71    m: 3   k: 2   Memory: Good! Student: Wrong Ans
+Your: [0, 58, 69, 58, 58, 0]
+Auto: [0, 58, 69, 58, 58, 13]
+Test № 188   gentest188_3_3.txt    Len: 71    m: 3   k: 3   Memory: Good! Student: Wrong Ans
+Your: [2, 59, 71, 59, 0, 0]
+Auto: [2, 59, 71, 59, 0, 71]
+Test № 189   gentest189_3_4.txt    Len: 71    m: 3   k: 4   Memory: Good! Student: OK
+Test № 190   gentest190_4_0.txt    Len: 71    m: 4   k: 0   Memory: Good! Student: OK
+Test № 191   gentest191_4_1.txt    Len: 71    m: 4   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 60, 60, 60, 10, 0]
+Auto: [0, 60, 60, 60, 10, 1]
+Test № 192   gentest192_4_2.txt    Len: 71    m: 4   k: 2   Memory: Good! Student: Wrong Ans
+Your: [1, 61, 70, 61, 61, 0]
+Auto: [1, 61, 70, 61, 61, 10]
+Test № 193   gentest193_4_3.txt    Len: 71    m: 4   k: 3   Memory: Good! Student: Wrong Ans
+Your: [0, 61, 71, 61, 0, 0]
+Auto: [0, 61, 71, 61, 0, 71]
+Test № 194   gentest194_4_4.txt    Len: 71    m: 4   k: 4   Memory: Good! Student: OK
+Test № 195   gentest195_5_0.txt    Len: 71    m: 5   k: 0   Memory: Good! Student: OK
+Test № 196   gentest196_5_1.txt    Len: 71    m: 5   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 62, 62, 62, 62, 0]
+Auto: [0, 62, 62, 62, 62, 9]
+Test № 197   gentest197_5_2.txt    Len: 71    m: 5   k: 2   Memory: Good! Student: Wrong Ans
+Your: [0, 64, 71, 64, 0, 0]
+Auto: [0, 64, 71, 64, 0, 71]
+Test № 198   gentest198_5_3.txt    Len: 71    m: 5   k: 3   Memory: Good! Student: OK
+Test № 199   gentest199_5_4.txt    Len: 71    m: 5   k: 4   Memory: Good! Student: OK
+Test № 200   gentest200_1_0.txt    Len: 81    m: 1   k: 0   Memory: Good! Student: OK
+Test № 201   gentest201_1_1.txt    Len: 81    m: 1   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 47, 47, 47, 3, 0]
+Auto: [0, 47, 47, 47, 3, 2]
+Test № 202   gentest202_1_2.txt    Len: 81    m: 1   k: 2   Memory: Good! Student: Wrong Ans
+Your: [18, 47, 67, 57, 8, 0]
+Auto: [18, 47, 67, 57, 8, 6]
+Test № 203   gentest203_1_3.txt    Len: 81    m: 1   k: 3   Memory: Good! Student: Wrong Ans
+Your: [20, 57, 77, 69, 19, 0]
+Auto: [18, 58, 76, 68, 19, 13]
+Test № 204   gentest204_1_4.txt    Len: 81    m: 1   k: 4   Memory: Good! Student: Wrong Ans
+Your: [0, 68, 80, 68, 46, 0]
+Auto: [0, 68, 80, 68, 46, 35]
+Test № 205   gentest205_2_0.txt    Len: 81    m: 2   k: 0   Memory: Good! Student: OK
+Test № 206   gentest206_2_1.txt    Len: 81    m: 2   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 59, 59, 59, 4, 0]
+Auto: [0, 59, 59, 59, 4, 1]
+Test № 207   gentest207_2_2.txt    Len: 81    m: 2   k: 2   Memory: Good! Student: Wrong Ans
+Your: [1, 60, 75, 60, 15, 0]
+Auto: [1, 60, 75, 60, 15, 6]
+Test № 208   gentest208_2_3.txt    Len: 81    m: 2   k: 3   Memory: Good! Student: Wrong Ans
+Your: [14, 60, 80, 72, 60, 0]
+Auto: [14, 60, 80, 72, 60, 21]
+Test № 209   gentest209_2_4.txt    Len: 81    m: 2   k: 4   Memory: Good! Student: Wrong Ans
+Your: [9, 67, 81, 76, 0, 0]
+Auto: [9, 67, 81, 76, 0, 81]
+Test № 210   gentest210_3_0.txt    Len: 81    m: 3   k: 0   Memory: Good! Student: OK
+Test № 211   gentest211_3_1.txt    Len: 81    m: 3   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 65, 65, 65, 13, 0]
+Auto: [0, 65, 65, 65, 13, 3]
+Test № 212   gentest212_3_2.txt    Len: 81    m: 3   k: 2   Memory: Good! Student: Wrong Ans
+Your: [0, 65, 79, 65, 65, 0]
+Auto: [0, 65, 79, 65, 65, 16]
+Test № 213   gentest213_3_3.txt    Len: 81    m: 3   k: 3   Memory: Good! Student: Wrong Ans
+Your: [2, 66, 81, 66, 0, 0]
+Auto: [2, 66, 81, 66, 0, 81]
+Test № 214   gentest214_3_4.txt    Len: 81    m: 3   k: 4   Memory: Good! Student: OK
+Test № 215   gentest215_4_0.txt    Len: 81    m: 4   k: 0   Memory: Good! Student: OK
+Test № 216   gentest216_4_1.txt    Len: 81    m: 4   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 68, 68, 68, 12, 0]
+Auto: [0, 68, 68, 68, 12, 1]
+Test № 217   gentest217_4_2.txt    Len: 81    m: 4   k: 2   Memory: Good! Student: Wrong Ans
+Your: [1, 69, 80, 69, 69, 0]
+Auto: [1, 69, 80, 69, 69, 12]
+Test № 218   gentest218_4_3.txt    Len: 81    m: 4   k: 3   Memory: Good! Student: Wrong Ans
+Your: [0, 70, 81, 70, 0, 0]
+Auto: [0, 70, 81, 70, 0, 81]
+Test № 219   gentest219_4_4.txt    Len: 81    m: 4   k: 4   Memory: Good! Student: OK
+Test № 220   gentest220_5_0.txt    Len: 81    m: 5   k: 0   Memory: Good! Student: OK
+Test № 221   gentest221_5_1.txt    Len: 81    m: 5   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 71, 71, 71, 71, 0]
+Auto: [0, 71, 71, 71, 71, 10]
+Test № 222   gentest222_5_2.txt    Len: 81    m: 5   k: 2   Memory: Good! Student: Wrong Ans
+Your: [0, 71, 81, 71, 0, 0]
+Auto: [0, 71, 81, 71, 0, 81]
+Test № 223   gentest223_5_3.txt    Len: 81    m: 5   k: 3   Memory: Good! Student: OK
+Test № 224   gentest224_5_4.txt    Len: 81    m: 5   k: 4   Memory: Good! Student: OK
+Test № 225   gentest225_1_0.txt    Len: 91    m: 1   k: 0   Memory: Good! Student: OK
+Test № 226   gentest226_1_1.txt    Len: 91    m: 1   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 55, 55, 55, 4, 0]
+Auto: [0, 54, 54, 54, 4, 2]
+Test № 227   gentest227_1_2.txt    Len: 91    m: 1   k: 2   Memory: Good! Student: Wrong Ans
+Your: [26, 51, 74, 64, 4, 0]
+Auto: [26, 51, 74, 64, 4, 3]
+Test № 228   gentest228_1_3.txt    Len: 91    m: 1   k: 3   Memory: Good! Student: Wrong Ans
+Your: [24, 63, 86, 75, 23, 0]
+Auto: [24, 63, 86, 75, 23, 16]
+Test № 229   gentest229_1_4.txt    Len: 91    m: 1   k: 4   Memory: Good! Student: Wrong Ans
+Your: [0, 74, 88, 78, 21, 0]
+Auto: [0, 74, 88, 78, 21, 17]
+Test № 230   gentest230_2_0.txt    Len: 91    m: 2   k: 0   Memory: Good! Student: OK
+Test № 231   gentest231_2_1.txt    Len: 91    m: 2   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 66, 66, 66, 5, 0]
+Auto: [0, 65, 65, 65, 5, 1]
+Test № 232   gentest232_2_2.txt    Len: 91    m: 2   k: 2   Memory: Good! Student: Wrong Ans
+Your: [1, 66, 85, 66, 19, 0]
+Auto: [1, 66, 85, 66, 19, 6]
+Test № 233   gentest233_2_3.txt    Len: 91    m: 2   k: 3   Memory: Good! Student: Wrong Ans
+Your: [10, 67, 90, 75, 67, 0]
+Auto: [10, 67, 90, 75, 67, 24]
+Test № 234   gentest234_2_4.txt    Len: 91    m: 2   k: 4   Memory: Good! Student: Wrong Ans
+Your: [12, 72, 91, 81, 0, 0]
+Auto: [12, 72, 91, 81, 0, 91]
+Test № 235   gentest235_3_0.txt    Len: 91    m: 3   k: 0   Memory: Good! Student: OK
+Test № 236   gentest236_3_1.txt    Len: 91    m: 3   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 74, 74, 74, 14, 0]
+Auto: [0, 74, 74, 74, 14, 3]
+Test № 237   gentest237_3_2.txt    Len: 91    m: 3   k: 2   Memory: Good! Student: Wrong Ans
+Your: [0, 74, 88, 74, 74, 0]
+Auto: [0, 74, 88, 74, 74, 17]
+Test № 238   gentest238_3_3.txt    Len: 91    m: 3   k: 3   Memory: Good! Student: Wrong Ans
+Your: [2, 73, 91, 73, 0, 0]
+Auto: [2, 73, 91, 73, 0, 91]
+Test № 239   gentest239_3_4.txt    Len: 91    m: 3   k: 4   Memory: Good! Student: OK
+Test № 240   gentest240_4_0.txt    Len: 91    m: 4   k: 0   Memory: Good! Student: OK
+Test № 241   gentest241_4_1.txt    Len: 91    m: 4   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 78, 78, 78, 12, 0]
+Auto: [0, 78, 78, 78, 12, 1]
+Test № 242   gentest242_4_2.txt    Len: 91    m: 4   k: 2   Memory: Good! Student: Wrong Ans
+Your: [1, 78, 90, 78, 78, 0]
+Auto: [1, 78, 90, 78, 78, 13]
+Test № 243   gentest243_4_3.txt    Len: 91    m: 4   k: 3   Memory: Good! Student: Wrong Ans
+Your: [0, 79, 91, 79, 0, 0]
+Auto: [0, 79, 91, 79, 0, 91]
+Test № 244   gentest244_4_4.txt    Len: 91    m: 4   k: 4   Memory: Good! Student: OK
+Test № 245   gentest245_5_0.txt    Len: 91    m: 5   k: 0   Memory: Good! Student: OK
+Test № 246   gentest246_5_1.txt    Len: 91    m: 5   k: 1   Memory: Good! Student: Wrong Ans
+Your: [0, 81, 81, 81, 81, 0]
+Auto: [0, 81, 81, 81, 81, 10]
+Test № 247   gentest247_5_2.txt    Len: 91    m: 5   k: 2   Memory: Good! Student: Wrong Ans
+Your: [1, 79, 90, 79, 79, 0]
+Auto: [1, 79, 90, 79, 79, 12]
+Test № 248   gentest248_5_3.txt    Len: 91    m: 5   k: 3   Memory: Good! Student: OK
+Test № 249   gentest249_5_4.txt    Len: 91    m: 5   k: 4   Memory: Good! Student: OK
+Summary: 117 of 250 completed successfully!
