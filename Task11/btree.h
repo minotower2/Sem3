@@ -256,7 +256,7 @@ public:
     if (curr == nullptr || level > goal) return;
     if (goal == level) (*count)++;
     for (int i = 0; i <= curr->size; i++) {
-      count_kth_level(curr->children[i], goal, level+1, count);
+      count_nodes_kth_level(curr->children[i], goal, level+1, count);
     }
   }
   int check_subtree(b_tree_node<T> *curr, int k) {
