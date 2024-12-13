@@ -236,6 +236,64 @@ public:
     }
   }
   //===============================
+  //           Task 4
+  //===============================
+  int solve4(int k) {
+    int count = 0;
+    solve4_recc(root, k, &count);
+    return count;
+  }
+  int get_height(b_tree_node<T>*curr) {
+    if (curr == nullptr) return 0;
+    int count = 1, height, max_height = 0;
+    for (int i = 0; i <= curr->size; i++) {
+      height = get_height(curr->children[i]);
+      if (height > max_height) max_height = height;
+    }
+    return count + max_height;
+  }
+  void count_nodes_kth_level(b_tree_node<T> *curr, int goal, int level, int *count) {
+    if (curr == nullptr || level > goal) return;
+    if (goal == level) (*count)++;
+    for (int i = 0; i <= curr->size; i++) {
+      count_kth_level(curr->children[i], goal, level+1, count);
+    }
+  }
+  int check_subtree(b_tree_node<T> *curr, int k) {
+    int height = get_height(curr);
+    int count;
+    for (int i = 0; i < height; i++) {
+      count = 0;
+      count_nodes_kth_level(curr, i, 0, &count);
+      if (count > k) {
+        return -1;
+      }
+    }
+    return 1;
+  }
+  void solve4_recc(b_tree_node<T> *curr, int k, int *count) {
+    if (curr == nullptr) return;
+    int num = 0, c;
+    num = check_subtree(curr, k);
+    if (num == 1) {
+      c = count_subtree_less(curr);
+      (*count) += c;
+      return;
+    }
+    for (int i = 0; i <= curr->size; i++) {
+      solve4_recc(curr->children[i], k, count);
+    }
+  }
+  int count_subtree_less(b_tree_node<T> *curr) {
+    if (curr == nullptr) return 0;
+    int size = curr->size;
+    int count = size;
+    for (int i = 0; i <= size; i++) {
+      count += count_subtree_less((curr->children)[i]);
+    }
+    return count;
+  }
+  //===============================
   //           Task 5
   //===============================
   int solve5(int k) {
