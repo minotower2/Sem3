@@ -235,5 +235,20 @@ public:
       solve3_recc(curr->children[i], k, count);
     }
   }
+  //===============================
+  //           Task 5
+  //===============================
+  int solve5(int k) {
+    int count = 0;
+    count_kth_level(root, k, 0, &count);
+    return count;
+  }
+  void count_kth_level(b_tree_node<T> *curr, int goal, int level, int *count) {
+    if (curr == nullptr || level > goal) return;
+    if (goal == level) (*count) += curr->size;
+    for (int i = 0; i <= curr->size; i++) {
+      count_kth_level(curr->children[i], goal, level+1, count);
+    }
+  }
 };
 #endif
